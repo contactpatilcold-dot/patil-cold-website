@@ -855,8 +855,11 @@ document
                 document.getElementById("featured").checked,
 
             sort_order:
-                Number(document.getElementById("sortOrder").value) || 0
-        };
+    Number(document.getElementById("sortOrder").value) || 0,
+
+image_url:
+    document.getElementById("image_url").value.trim()
+};
 
 
         const message =
