@@ -1,10 +1,9 @@
 // =========================================
 // PATIL COLD WEBSITE
-// Main JavaScript
+// Supabase Product Loading
 // =========================================
 
 
-// Mobile menu
 function toggleMenu() {
 
     const navbar = document.querySelector(".navbar");
@@ -27,103 +26,234 @@ document.querySelectorAll(".navbar a").forEach(function(link) {
 });
 
 
-// Temporary product data
-// This will be replaced with Supabase data
-// in the next step.
+// =========================================
+// LOAD PRODUCTS FROM SUPABASE
+// =========================================
 
-const products = [
-
-    {
-        flavour: "Vanilla",
-        description: "Classic and creamy vanilla ice cream.",
-        price: "₹10",
-        emoji: "🍦",
-        className: "flavour-vanilla"
-    },
-
-    {
-        flavour: "Chocolate",
-        description: "Rich and smooth chocolate ice cream.",
-        price: "₹10",
-        emoji: "🍫",
-        className: "flavour-chocolate"
-    },
-
-    {
-        flavour: "Butterscotch",
-        description: "Creamy butterscotch with caramel flavour.",
-        price: "₹10",
-        emoji: "🍨",
-        className: "flavour-butterscotch"
-    },
-
-    {
-        flavour: "Mango",
-        description: "Refreshing and fruity mango ice cream.",
-        price: "₹10",
-        emoji: "🥭",
-        className: "flavour-mango"
-    },
-
-    {
-        flavour: "Strawberry",
-        description: "Fruity and creamy strawberry ice cream.",
-        price: "₹10",
-        emoji: "🍓",
-        className: "flavour-strawberry"
-    }
-
-];
-
-
-function displayProducts() {
+async function loadProducts() {
 
     const productGrid = document.getElementById("productGrid");
 
-    productGrid.innerHTML = "";
+    productGrid.innerHTML = `
+        <div class="loading">
+            Loading our delicious flavours...
+        </div>
+    `;
 
 
-    products.forEach(function(product) {
+    try {
 
-        const card = document.createElement("div");
+        const { data, error } = await supabaseClient
+            .from("products")
+            .select("*")
+            .eq("available", true)
+            .order("sort_order", { ascending: true });
 
-        card.className = "product-card";
+
+        if (error) {
+
+            console.error("Supabase error:", error);
+
+            productGrid.innerHTML = `
+                <div class="loading">
+                    Unable to load products.
+                </div>
+            `;
+
+            return;
+        }
 
 
-        card.innerHTML = `
+        if (!data || data.length === 0) {
 
-            <div class="product-image ${product.className}">
+            productGrid.innerHTML = `
+                <div class="loading">
+                    No products available currently.
+                </div>
+            `;
 
-                <div class="product-placeholder">
-                    ${product.emoji}
+            return;
+        }
+
+
+        // Group products by flavour
+
+        const flavours = {};
+
+        data.forEach(function(product) {
+
+            if (!flavours[product.flavour]) {
+
+                flavours[product.flavour] = [];
+
+            }
+
+            flavours[product.flavour].push(product);
+
+        });
+
+
+        productGrid.innerHTML = "";
+
+
+        Object.keys(flavours).forEach(function(flavour) {
+
+            const products = flavours[flavour];
+
+            const firstProduct = products[0];
+
+            const flavourClass = getFlavourClass(flavour);
+
+            const emoji = getFlavourEmoji(flavour);
+
+            const lowestPrice = Math.min(
+                ...products.map(product => Number(product.price))
+            );
+
+
+            const sizes = products
+                .map(product => `${product.size} - ₹${product.price}`)
+                .join(" | ");
+
+
+            const card = document.createElement("div");
+
+            card.className = "product-card";
+
+
+            card.innerHTML = `
+
+                <div class="product-image ${flavourClass}">
+
+                    ${
+                        firstProduct.image_url
+                        ?
+                        `<img src="${firstProduct.image_url}"
+                              alt="${flavour} Ice Cream">`
+                        :
+                        `<div class="product-placeholder">
+                            ${emoji}
+                         </div>`
+                    }
+
                 </div>
 
-            </div>
 
-            <div class="product-info">
+                <div class="product-info">
 
-                <h3>
-                    ${product.flavour}
-                </h3>
+                    <h3>
+                        ${flavour}
+                    </h3>
 
-                <p>
-                    ${product.description}
-                </p>
+                    <p>
+                        ${firstProduct.description || "Delicious and creamy ice cream."}
+                    </p>
 
-                <div class="price">
-                    From ${product.price}
+                    <div class="price">
+                        From ₹${lowestPrice}
+                    </div>
+
+                    <p>
+                        ${sizes}
+                    </p>
+
                 </div>
 
-            </div>
+            `;
 
+
+            productGrid.appendChild(card);
+
+        });
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        productGrid.innerHTML = `
+            <div class="loading">
+                Something went wrong while loading products.
+            </div>
         `;
 
-
-        productGrid.appendChild(card);
-
-    });
+    }
 
 }
 
 
-displayProducts();
+// =========================================
+// FLAVOUR STYLE
+// =========================================
+
+function getFlavourClass(flavour) {
+
+    const name = flavour.toLowerCase();
+
+
+    if (name.includes("vanilla")) {
+        return "flavour-vanilla";
+    }
+
+    if (name.includes("chocolate")) {
+        return "flavour-chocolate";
+    }
+
+    if (name.includes("butterscotch")) {
+        return "flavour-butterscotch";
+    }
+
+    if (name.includes("mango")) {
+        return "flavour-mango";
+    }
+
+    if (name.includes("strawberry")) {
+        return "flavour-strawberry";
+    }
+
+
+    return "flavour-vanilla";
+
+}
+
+
+// =========================================
+// FLAVOUR EMOJI
+// =========================================
+
+function getFlavourEmoji(flavour) {
+
+    const name = flavour.toLowerCase();
+
+
+    if (name.includes("vanilla")) {
+        return "🍦";
+    }
+
+    if (name.includes("chocolate")) {
+        return "🍫";
+    }
+
+    if (name.includes("butterscotch")) {
+        return "🍨";
+    }
+
+    if (name.includes("mango")) {
+        return "🥭";
+    }
+
+    if (name.includes("strawberry")) {
+        return "🍓";
+    }
+
+
+    return "🍦";
+
+}
+
+
+// =========================================
+// START
+// =========================================
+
+loadProducts();
