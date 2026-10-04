@@ -105,6 +105,7 @@ async function loadProducts() {
             const flavourClass = getFlavourClass(flavour);
 
             const emoji = getFlavourEmoji(flavour);
+            const imagePath = getFlavourImage(flavour);
 
             const lowestPrice = Math.min(
                 ...products.map(product => Number(product.price))
@@ -125,16 +126,11 @@ async function loadProducts() {
 
                 <div class="product-image ${flavourClass}">
 
-                    ${
-                        firstProduct.image_url
-                        ?
-                        `<img src="${firstProduct.image_url}"
-                              alt="${flavour} Ice Cream">`
-                        :
-                        `<div class="product-placeholder">
-                            ${emoji}
-                         </div>`
-                    }
+                    <img
+    src="${firstProduct.image_url || imagePath}"
+    alt="Patil Cold ${flavour} Ice Cream"
+    loading="lazy"
+>
 
                 </div>
 
@@ -255,5 +251,30 @@ function getFlavourEmoji(flavour) {
 // =========================================
 // START
 // =========================================
+function getFlavourImage(flavour) {
 
+    const name = flavour.toLowerCase();
+
+    if (name.includes("vanilla")) {
+        return "assets/products/vanilla.png";
+    }
+
+    if (name.includes("chocolate")) {
+        return "assets/products/chocolate.png";
+    }
+
+    if (name.includes("butterscotch")) {
+        return "assets/products/butterscotch.png";
+    }
+
+    if (name.includes("mango")) {
+        return "assets/products/mango.png";
+    }
+
+    if (name.includes("strawberry")) {
+        return "assets/products/strawberry.png";
+    }
+
+    return "";
+}
 loadProducts();
