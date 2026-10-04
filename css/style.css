@@ -16,7 +16,21 @@
     --muted: #687084;
     --border: #eeeeee;
 }
+.dashboard-btn {
+    display: inline-block;
+    background: #071d49;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
 
+.dashboard-btn:hover {
+    background: #102f6b;
+}
 
 * {
     margin: 0;
@@ -757,18 +771,4 @@ a {
 
 }
 
-.dashboard-btn {
-    display: inline-block;
-    background: #071d49;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-}
 
-.dashboard-btn:hover {
-    background: #102f6b;
-}
