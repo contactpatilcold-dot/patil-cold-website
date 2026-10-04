@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patil Cold - Admin Login</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f4ee;
+            font-family: Arial, sans-serif;
+        }
+
+        .admin-login {
+            width: 100%;
+            max-width: 420px;
+            margin: 20px;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .admin-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-logo h1 {
+            margin: 0;
+            color: #071d49;
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        .admin-logo p {
+            margin-top: 8px;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #071d49;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #071d49;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #102f6b;
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #message {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .back-home {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #071d49;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="admin-login">
+
+        <div class="admin-logo">
+            <h1>PATIL COLD</h1>
+            <p>Admin Panel</p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label for="email">Admin Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter admin email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">
+                Login
+            </button>
+
+        </form>
+
+        <div id="message"></div>
+
+        <a href="../index.html" class="back-home">
+            ← Back to Website
+        </a>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginBtn = document.getElementById("loginBtn");
+        const message = document.getElementById("message");
+
+        loginForm.addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            loginBtn.disabled = true;
+            loginBtn.textContent = "Logging in...";
+            message.textContent = "";
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+            if (error) {
+
+                message.style.color = "red";
+                message.textContent = error.message;
+
+                loginBtn.disabled = false;
+                loginBtn.textContent = "Login";
+
+                return;
+            }
+
+            // Check whether logged-in user is an authorized admin
+            const { data: adminUser, error: adminError } =
+                await supabaseClient
+                    .from("admin_users")
+                    .select("user_id")
+                    .eq("user_id", data.user.id)
+                    .maybeSingle();
+
+            if (adminError || !adminUser) {
+
+                await supabaseClient.auth.signOut();
+
+                message.style.color = "red";
+                message.textContent = "You are not authorized as an admin.";
+
+                loginBtn.disabled = false;
+                loginBtn.textContent = "Login";
+
+                return;
+            }
+
+            message.style.color = "green";
+            message.textContent = "Login successful. Redirecting...";
+
+            setTimeout(function() {
+                window.location.href = "dashboard.html";
+            }, 800);
+        });
+    </script>
+
+</body>
+</html>
