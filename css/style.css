@@ -16,21 +16,7 @@
     --muted: #687084;
     --border: #eeeeee;
 }
-.dashboard-btn {
-    display: inline-block;
-    background: #071d49;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-}
 
-.dashboard-btn:hover {
-    background: #102f6b;
-}
 
 * {
     margin: 0;
@@ -770,5 +756,28 @@ a {
     }
 
 }
+
+/* =========================================
+   ADMIN DASHBOARD BUTTON
+========================================= */
+
+.dashboard-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dashboard-btn:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+
 
 
