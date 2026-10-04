@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patil Cold - Admin Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: #071d49;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .logout-btn {
+            background: #e91e63;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            margin-bottom: 5px;
+            color: #071d49;
+        }
+
+        .welcome p {
+            color: #666;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #071d49;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .card button {
+            background: #071d49;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background: #102f6b;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 19px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div>
+            <h1>PATIL COLD</h1>
+            <span>Admin Dashboard</span>
+        </div>
+
+        <button class="logout-btn" id="logoutBtn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="welcome">
+
+            <h2>Welcome, Admin 👋</h2>
+
+            <p>
+                Manage your Patil Cold products, prices and availability
+                from one place.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+            <div class="card">
+
+                <h3>📦 Products</h3>
+
+                <p>
+                    Add new flavours and manage existing products.
+                </p>
+
+                <button>
+                    Manage Products
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💰 Prices</h3>
+
+                <p>
+                    Update product prices and MRP whenever required.
+                </p>
+
+                <button>
+                    Manage Prices
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🖼️ Images</h3>
+
+                <p>
+                    Manage product images displayed on the website.
+                </p>
+
+                <button>
+                    Manage Images
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>✅ Availability</h3>
+
+                <p>
+                    Turn products ON or OFF on the public website.
+                </p>
+
+                <button>
+                    Manage Availability
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+
+
+    <script>
+
+        async function checkAdmin() {
+
+            const {
+                data: { session }
+            } = await supabaseClient.auth.getSession();
+
+
+            if (!session) {
+
+                window.location.href = "index.html";
+
+                return;
+            }
+
+
+            const { data: adminUser, error } =
+                await supabaseClient
+                    .from("admin_users")
+                    .select("user_id")
+                    .eq("user_id", session.user.id)
+                    .maybeSingle();
+
+
+            if (error || !adminUser) {
+
+                await supabaseClient.auth.signOut();
+
+                window.location.href = "index.html";
+
+                return;
+            }
+        }
+
+
+        document
+            .getElementById("logoutBtn")
+            .addEventListener("click", async function() {
+
+                await supabaseClient.auth.signOut();
+
+                window.location.href = "index.html";
+
+            });
+
+
+        checkAdmin();
+
+    </script>
+
+</body>
+
+</html>
