@@ -52,16 +52,18 @@ async function loadProducts() {
 
         if (error) {
 
-            console.error("Supabase error:", error);
+    console.error("Supabase error:", error);
 
-            productGrid.innerHTML = `
-                <div class="loading">
-                    Unable to load products.
-                </div>
-            `;
+    productGrid.innerHTML = `
+        <div class="loading">
+            <h3>Product Loading Error</h3>
+            <p>${error.message}</p>
+            <p>Error Code: ${error.code || "N/A"}</p>
+        </div>
+    `;
 
-            return;
-        }
+    return;
+}
 
 
         if (!data || data.length === 0) {
