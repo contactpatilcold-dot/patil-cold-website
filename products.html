@@ -71,6 +71,33 @@
             gap: 25px;
         }
 
+        /* Flavour-specific page theme */
+        body.theme-vanilla { background: #fffaf0; }
+        body.theme-chocolate { background: #fbf0e9; }
+        body.theme-butterscotch { background: #fff7df; }
+        body.theme-mango { background: #fff6d8; }
+        body.theme-strawberry { background: #fff0f3; }
+
+        .theme-banner {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 28px;
+            padding: 18px 22px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            color: #071b4a;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(7,27,74,0.07);
+        }
+
+        body.theme-vanilla .theme-banner { background: #fff4c9; }
+        body.theme-chocolate .theme-banner { background: #ead5c7; }
+        body.theme-butterscotch .theme-banner { background: #ffe7a1; }
+        body.theme-mango .theme-banner { background: #ffe99b; }
+        body.theme-strawberry .theme-banner { background: #ffd5df; }
+
         .product-card {
             background: white;
             border-radius: 16px;
@@ -117,6 +144,31 @@
         .product-info {
             padding: 20px;
             flex: 1;
+        }
+
+        .pack-label {
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 9px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #071b4a;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .view-details {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            color: #071b4a;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
         }
 
         .product-info h3 {
@@ -262,6 +314,8 @@
     </p>
 </section>
 
+<div id="themeBanner" class="theme-banner" style="display:none;"></div>
+
 <main class="products-container">
 
     <div id="productGrid" class="product-grid">
@@ -280,6 +334,49 @@
 <script src="js/supabase.js"></script>
 
 <script>
+function applyFlavourTheme(flavour) {
+    const name = String(flavour || "").toLowerCase();
+
+    document.body.classList.remove(
+        "theme-vanilla",
+        "theme-chocolate",
+        "theme-butterscotch",
+        "theme-mango",
+        "theme-strawberry"
+    );
+
+    let theme = "";
+    let message = "";
+
+    if (name.includes("vanilla")) {
+        theme = "theme-vanilla";
+        message = "Smooth, classic and creamy — a timeless Patil Cold favourite.";
+    } else if (name.includes("chocolate")) {
+        theme = "theme-chocolate";
+        message = "Rich, smooth and indulgently chocolatey.";
+    } else if (name.includes("butterscotch")) {
+        theme = "theme-butterscotch";
+        message = "Creamy, caramel-inspired goodness in every scoop.";
+    } else if (name.includes("mango")) {
+        theme = "theme-mango";
+        message = "A refreshing fruity treat with the taste of mango.";
+    } else if (name.includes("strawberry")) {
+        theme = "theme-strawberry";
+        message = "Fruity, creamy and delightfully refreshing.";
+    }
+
+    if (theme) {
+        document.body.classList.add(theme);
+
+        const banner = document.getElementById("themeBanner");
+        if (banner) {
+            banner.textContent = message;
+            banner.style.display = "block";
+        }
+    }
+}
+
+
 async function loadFlavourProducts() {
 
     const productGrid = document.getElementById("productGrid");
@@ -288,6 +385,8 @@ async function loadFlavourProducts() {
 
     const params = new URLSearchParams(window.location.search);
     const flavour = params.get("flavour");
+
+    applyFlavourTheme(flavour);
 
     if (!flavour) {
         flavourTitle.textContent = "Our Ice Cream";
@@ -384,6 +483,10 @@ async function loadFlavourProducts() {
 
             <div class="product-info">
 
+                <span class="pack-label">
+                    ${escapeHtml(product.size)} Pack
+                </span>
+
                 <h3>
                     ${escapeHtml(product.product_name)}
                 </h3>
@@ -412,6 +515,10 @@ async function loadFlavourProducts() {
 
                 <span class="product-status">
                     Available
+                </span>
+
+                <span class="view-details">
+                    Product Details →
                 </span>
 
             </div>
