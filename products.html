@@ -18,28 +18,94 @@
             color: #17213a;
         }
 
+        /* =========================
+           PATIL COLD HEADER
+           ========================= */
         .header {
-            background: #071b4a;
-            color: white;
-            padding: 18px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e9edf5;
+            box-shadow: 0 4px 18px rgba(7,27,74,0.06);
         }
 
-        .logo {
-            font-size: 25px;
-            font-weight: 800;
-            letter-spacing: 1px;
+        .header-inner {
+            width: min(1180px, 92%);
+            min-height: 82px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .brand-logo img {
+            width: 150px;
+            height: 72px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: #17213a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 30px 0 27px;
+            transition: color .2s ease;
+        }
+
+        .main-nav a:hover {
+            color: #ef1857;
+        }
+
+        .home-link {
+            color: #ef1857 !important;
         }
 
         .back-btn {
-            color: #071b4a;
-            background: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            color: #fff;
+            background: #ef1857;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 7px;
-            font-weight: 600;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(239,24,87,.20);
+            white-space: nowrap;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(239,24,87,.28);
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: #071b4a;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         .hero {
@@ -236,11 +302,202 @@
             margin-bottom: 8px;
         }
 
+        /* =========================
+           PATIL COLD FOOTER
+           ========================= */
         .footer {
-            background: #071b4a;
-            color: white;
-            text-align: center;
-            padding: 25px;
+            background: #041d48;
+            color: #fff;
+            padding: 52px 0 22px;
+        }
+
+        .footer-inner {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        .footer-brand img {
+            width: 155px;
+            height: 75px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .footer-brand p {
+            color: #c9d5ee;
+            font-size: 14px;
+            margin-top: 12px;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .footer h3 {
+            margin: 0 0 13px;
+            font-size: 15px;
+            color: #fff;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer li,
+        .footer li a {
+            color: #d5def0;
+            font-size: 14px;
+            line-height: 2;
+            text-decoration: none;
+        }
+
+        .footer li a:hover {
+            color: #ff78a8;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #173d78;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,.18);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #c1cee7;
+            font-size: 13px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-bottom a {
+            color: #c1cee7;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+
+
+        @media (max-width: 1050px) {
+            .main-nav {
+                gap: 16px;
+            }
+
+            .main-nav a {
+                font-size: 13px;
+            }
+
+            .header-inner {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .main-nav {
+                display: none;
+            }
+
+            .header-inner {
+                min-height: 72px;
+            }
+
+            .brand-logo img {
+                width: 125px;
+                height: 62px;
+            }
+
+            .back-btn {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .header.mobile-open .main-nav {
+                display: flex;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #fff;
+                padding: 10px 5%;
+                box-shadow: 0 12px 25px rgba(7,27,74,.10);
+            }
+
+            .header.mobile-open .main-nav a {
+                padding: 12px 0;
+                border-bottom: 1px solid #eef1f6;
+            }
+
+            .header.mobile-open .main-nav .nav-enquire {
+                display: block;
+                text-align: center;
+                color: #fff;
+                background: #ef1857;
+                border-radius: 28px;
+                margin: 10px 0 8px;
+                padding: 12px 18px;
+                border: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 1000px) {
@@ -298,12 +555,42 @@
 
 <body>
 
-<header class="header">
-    <div class="logo">PATIL COLD</div>
+<header class="header" id="siteHeader">
+    <div class="header-inner">
 
-    <a href="index.html" class="back-btn">
-        ← Back to Home
-    </a>
+        <a href="index.html" class="brand-logo" aria-label="Patil Cold Home">
+            <img src="assets/logo.png" alt="Patil Cold Ice Cream">
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a href="index.html" class="home-link">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="products.html?flavour=Vanilla">Products</a>
+            <a href="index.html#quality">Quality</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+
+            <a
+                href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you."
+                class="nav-enquire"
+                target="_blank"
+                rel="noopener"
+            >
+                Enquire Now →
+            </a>
+        </nav>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </div>
 </header>
 
 <section class="hero">
@@ -326,8 +613,89 @@
 
 </main>
 
-<footer class="footer">
-    © 2026 Patil Cold. All Rights Reserved.
+<footer class="footer" id="contact">
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Patil Cold Ice Cream">
+                <p>
+                    Bringing creamy happiness to your moments.
+                    Quality, taste and trust in every scoop.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="products.html?flavour=Vanilla">Products</a></li>
+                    <li><a href="index.html#quality">Quality</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Our Products</h3>
+                <ul>
+                    <li><a href="products.html?flavour=Vanilla">Vanilla</a></li>
+                    <li><a href="products.html?flavour=Chocolate">Chocolate</a></li>
+                    <li><a href="products.html?flavour=Butterscotch">Butterscotch</a></li>
+                    <li><a href="products.html?flavour=Mango">Mango</a></li>
+                    <li><a href="products.html?flavour=Strawberry">Strawberry</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>📍 Pune, Maharashtra, India</li>
+                    <li>
+                        📱
+                        <a href="https://wa.me/917666582152" target="_blank" rel="noopener">
+                            +91 76665 82152
+                        </a>
+                    </li>
+                    <li>
+                        ✉️
+                        <a href="mailto:contactpatilcold@gmail.com">
+                            contactpatilcold@gmail.com
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="socials">
+                    <a
+                        href="https://www.instagram.com/patilcold"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Instagram"
+                    >◎</a>
+
+                    <a
+                        href="https://wa.me/917666582152"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="WhatsApp"
+                    >✆</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 Patil Cold Ice Cream. All Rights Reserved.</div>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+        </div>
+
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -581,6 +949,32 @@ function escapeHtml(value) {
 
 
 loadFlavourProducts();
+</script>
+
+
+<script>
+(function () {
+    const header = document.getElementById("siteHeader");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.querySelectorAll("#mainNav a");
+
+    if (!header || !menuButton) return;
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = header.classList.toggle("mobile-open");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            header.classList.remove("mobile-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.textContent = "☰";
+        });
+    });
+})();
 </script>
 
 </body>
