@@ -77,10 +77,13 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
             transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.12);
         }
 
         .product-image {
@@ -90,6 +93,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            position: relative;
         }
 
         .product-image img {
@@ -98,8 +102,21 @@
             object-fit: contain;
         }
 
+        .pack-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: #ef3d83;
+            color: white;
+            padding: 7px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
         .product-info {
             padding: 20px;
+            flex: 1;
         }
 
         .product-info h3 {
@@ -111,6 +128,13 @@
         .size {
             color: #687084;
             margin-bottom: 10px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
         }
 
         .price {
@@ -133,6 +157,17 @@
             line-height: 1.5;
         }
 
+        .product-status {
+            display: inline-block;
+            margin-top: 13px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #eaf7ee;
+            color: #21833b;
+        }
+
         .loading,
         .error,
         .empty {
@@ -140,6 +175,13 @@
             padding: 50px 20px;
             color: #687084;
             font-size: 17px;
+            grid-column: 1 / -1;
+        }
+
+        .error h3,
+        .empty h3 {
+            color: #071b4a;
+            margin-bottom: 8px;
         }
 
         .footer {
@@ -147,6 +189,12 @@
             color: white;
             text-align: center;
             padding: 25px;
+        }
+
+        @media (max-width: 1000px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         @media (max-width: 900px) {
@@ -164,8 +212,21 @@
                 font-size: 20px;
             }
 
+            .back-btn {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 40px 20px 28px;
+            }
+
             .hero h1 {
                 font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 15px;
             }
 
             .product-grid {
@@ -175,6 +236,10 @@
             .products-container {
                 width: 92%;
             }
+
+            .product-image {
+                height: 280px;
+            }
         }
     </style>
 </head>
@@ -182,143 +247,91 @@
 <body>
 
 <header class="header">
-
-    <div class="logo">
-        PATIL COLD
-    </div>
+    <div class="logo">PATIL COLD</div>
 
     <a href="index.html" class="back-btn">
         ← Back to Home
     </a>
-
 </header>
 
-
 <section class="hero">
-
-    <h1 id="flavourTitle">
-        Our Ice Cream
-    </h1>
+    <h1 id="flavourTitle">Our Ice Cream</h1>
 
     <p id="flavourSubtitle">
         Discover our delicious ice cream range.
     </p>
-
 </section>
-
 
 <main class="products-container">
 
     <div id="productGrid" class="product-grid">
-
         <div class="loading">
             Loading delicious products...
         </div>
-
     </div>
 
 </main>
 
-
 <footer class="footer">
-
     © 2026 Patil Cold. All Rights Reserved.
-
 </footer>
 
-
-<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script src="js/supabase.js"></script>
 
-
 <script>
-
 async function loadFlavourProducts() {
 
-    const productGrid =
-        document.getElementById("productGrid");
+    const productGrid = document.getElementById("productGrid");
+    const flavourTitle = document.getElementById("flavourTitle");
+    const flavourSubtitle = document.getElementById("flavourSubtitle");
 
-    const flavourTitle =
-        document.getElementById("flavourTitle");
-
-    const flavourSubtitle =
-        document.getElementById("flavourSubtitle");
-
-
-    // Get flavour from URL
-
-    const params =
-        new URLSearchParams(window.location.search);
-
-    const flavour =
-        params.get("flavour");
-
+    const params = new URLSearchParams(window.location.search);
+    const flavour = params.get("flavour");
 
     if (!flavour) {
-
-        flavourTitle.textContent =
-            "Our Ice Cream";
-
-        flavourSubtitle.textContent =
-            "Please select a flavour.";
+        flavourTitle.textContent = "Our Ice Cream";
+        flavourSubtitle.textContent = "Please select a flavour.";
 
         productGrid.innerHTML = `
             <div class="empty">
-                No flavour selected.
+                <h3>No flavour selected.</h3>
+                <p>Please return to the home page and select a flavour.</p>
             </div>
         `;
 
         return;
     }
 
-
-    flavourTitle.textContent =
-        flavour + " Ice Cream";
-
+    flavourTitle.textContent = flavour + " Ice Cream";
     flavourSubtitle.textContent =
-        "Choose your favourite " +
-        flavour.toLowerCase() +
-        " ice cream.";
+        "Choose your favourite " + flavour.toLowerCase() + " ice cream.";
 
-
-    // Get products from Supabase
-
-    const { data, error } =
-        await supabaseClient
-            .from("products")
-            .select("*")
-            .eq("flavour", flavour)
-            .eq("available", true)
-            .order("sort_order", {
-                ascending: true
-            })
-            .order("price", {
-                ascending: true
-            });
-
+    const { data, error } = await supabaseClient
+        .from("products")
+        .select("*")
+        .eq("flavour", flavour)
+        .eq("available", true)
+        .order("sort_order", { ascending: true })
+        .order("price", { ascending: true });
 
     if (error) {
-
         console.error(error);
 
         productGrid.innerHTML = `
             <div class="error">
                 <h3>Unable to load products</h3>
-                <p>${error.message}</p>
+                <p>Please try again later.</p>
             </div>
         `;
 
         return;
     }
 
-
     if (!data || data.length === 0) {
-
         productGrid.innerHTML = `
             <div class="empty">
-                <h3>No ${flavour} products available.</h3>
+                <h3>No ${escapeHtml(flavour)} products available.</h3>
                 <p>Please check back soon.</p>
             </div>
         `;
@@ -326,36 +339,48 @@ async function loadFlavourProducts() {
         return;
     }
 
-
     productGrid.innerHTML = "";
-
 
     data.forEach(function(product) {
 
-        const card =
-            document.createElement("div");
+        const card = document.createElement("article");
+        card.className = "product-card";
 
-        card.className =
-            "product-card";
+        const fallbackImage = getFlavourImage(product.flavour);
 
+        const imageUrl =
+            product.image_url && product.image_url.trim()
+                ? product.image_url
+                : fallbackImage;
 
-        const fallbackImage =
-            getFlavourImage(product.flavour);
+        const mrpHtml =
+            product.mrp &&
+            Number(product.mrp) > Number(product.price)
+                ? `
+                    <span class="mrp">
+                        ₹${formatPrice(product.mrp)}
+                    </span>
+                `
+                : "";
 
+        const featuredBadge =
+            product.featured
+                ? `<span class="pack-badge">Featured</span>`
+                : "";
 
         card.innerHTML = `
-
             <div class="product-image">
 
                 <img
-                    src="${product.image_url || fallbackImage}"
-                    alt="Patil Cold ${product.flavour} ${product.size}"
+                    src="${escapeHtml(imageUrl)}"
+                    alt="Patil Cold ${escapeHtml(product.flavour)} ${escapeHtml(product.size)}"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='${fallbackImage}'"
+                    onerror="this.onerror=null; this.src='${escapeHtml(fallbackImage)}';"
                 >
 
-            </div>
+                ${featuredBadge}
 
+            </div>
 
             <div class="product-info">
 
@@ -363,62 +388,56 @@ async function loadFlavourProducts() {
                     ${escapeHtml(product.product_name)}
                 </h3>
 
-
                 <div class="size">
-                    Pack Size: <strong>
-                        ${escapeHtml(product.size)}
-                    </strong>
+                    Pack Size:
+                    <strong>${escapeHtml(product.size)}</strong>
                 </div>
 
+                <div class="price-row">
 
-                <div class="price">
+                    <span class="price">
+                        ₹${formatPrice(product.price)}
+                    </span>
 
-                    ₹${Number(product.price).toFixed(0)}
-
-                    ${
-                        product.mrp &&
-                        Number(product.mrp) >
-                        Number(product.price)
-
-                        ? `
-                            <span class="mrp">
-                                ₹${Number(product.mrp).toFixed(0)}
-                            </span>
-                        `
-                        : ""
-                    }
+                    ${mrpHtml}
 
                 </div>
-
 
                 <div class="description">
-
-                    ${
-                        escapeHtml(
-                            product.description ||
-                            "Delicious and creamy ice cream."
-                        )
-                    }
-
+                    ${escapeHtml(
+                        product.description ||
+                        "Delicious and creamy ice cream."
+                    )}
                 </div>
 
-            </div>
+                <span class="product-status">
+                    Available
+                </span>
 
+            </div>
         `;
 
-
         productGrid.appendChild(card);
-
     });
+}
 
+
+function formatPrice(value) {
+    const number = Number(value);
+
+    if (Number.isNaN(number)) {
+        return "0";
+    }
+
+    return Number.isInteger(number)
+        ? number.toString()
+        : number.toFixed(2);
 }
 
 
 function getFlavourImage(flavour) {
 
-    const name =
-        flavour.toLowerCase();
-
+    const name = String(flavour || "").toLowerCase();
 
     if (name.includes("vanilla"))
         return "assets/products/vanilla.png";
@@ -441,13 +460,9 @@ function getFlavourImage(flavour) {
 
 function escapeHtml(value) {
 
-    if (
-        value === null ||
-        value === undefined
-    ) {
+    if (value === null || value === undefined) {
         return "";
     }
-
 
     return String(value)
         .replace(/&/g, "&amp;")
@@ -455,12 +470,10 @@ function escapeHtml(value) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-
 }
 
 
 loadFlavourProducts();
-
 </script>
 
 </body>
