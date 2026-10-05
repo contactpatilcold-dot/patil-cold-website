@@ -6,195 +6,235 @@
 <title>Quality | Patil Cold</title>
 <meta name="description" content="Patil Cold quality commitment - taste, consistency, hygiene and customer trust.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 :root{--navy:#071b52;--pink:#ff3f87;--cream:#fff8ef;--text:#20283a;--muted:#687188}
+html{scroll-behavior:smooth}
 body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}
-.container{width:92%;max-width:1180px;margin:auto}
+.container{width:92%;max-width:1180px;margin:0 auto}
 
-/* HEADER */
-.header{height:82px;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;position:sticky;top:0;z-index:1000}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
-.logo{width:145px;height:auto;display:block}
-.nav{display:flex;align-items:center;gap:27px;color:var(--navy);font-size:15px;font-weight:600}
-.nav a:hover,.nav a.active{color:var(--pink)}
-.enquire{background:var(--pink);color:#fff;padding:11px 21px;border-radius:24px;font-weight:700;white-space:nowrap}
-.menu{display:none;background:none;border:0;color:var(--navy);font-size:28px;cursor:pointer}
+/* HEADER - same simple structure used across Patil Cold pages */
+.site-header{height:82px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:block;width:145px;height:auto}
+.nav-links{display:flex;align-items:center;gap:27px;color:var(--navy);font-size:15px;font-weight:600}
+.nav-links a{transition:color .2s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--pink)}
+.enquire-btn{display:inline-block;background:var(--pink);color:#fff;padding:11px 21px;border-radius:25px;font-weight:700;white-space:nowrap}
+.menu-btn{display:none;background:transparent;border:0;color:var(--navy);font-size:28px;line-height:1;cursor:pointer}
 
 /* HERO */
-.hero{background:linear-gradient(120deg,#fff8ef,#fff 60%,#fff1f7);padding:72px 0}
+.quality-hero{background:linear-gradient(120deg,#fff8ef 0%,#fff 60%,#fff1f7 100%);padding:72px 0}
 .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
-.tag{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:800;margin-bottom:12px}
-.hero h1{font-size:clamp(40px,5vw,62px);line-height:1.08;color:var(--navy);margin-bottom:18px}
-.hero p{max-width:650px;color:var(--muted);font-size:18px}
-.quality-circle{width:min(390px,85vw);aspect-ratio:1;margin:auto;border-radius:50%;background:linear-gradient(145deg,#fff,#ffe1ed);border:12px solid #fff;box-shadow:0 20px 55px rgba(7,27,82,.13);display:flex;align-items:center;justify-content:center;text-align:center}
-.quality-circle strong{display:block;color:var(--navy);font-size:48px;line-height:1}
-.quality-circle span{display:block;color:var(--pink);font-size:18px;font-weight:800;margin-top:10px}
+.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:800;margin-bottom:12px}
+.hero-copy h1{font-size:clamp(40px,5vw,62px);line-height:1.08;color:var(--navy);margin-bottom:18px}
+.hero-copy p{max-width:650px;color:var(--muted);font-size:18px}
+.quality-badge{width:min(390px,85vw);aspect-ratio:1;margin:auto;border-radius:50%;background:linear-gradient(145deg,#fff,#ffe1ed);border:12px solid #fff;box-shadow:0 20px 55px rgba(7,27,82,.13);display:flex;align-items:center;justify-content:center;text-align:center}
+.quality-badge strong{display:block;color:var(--navy);font-size:48px;line-height:1}
+.quality-badge span{display:block;color:var(--pink);font-size:18px;font-weight:800;margin-top:10px}
 
 /* CONTENT */
 .section{padding:75px 0}
 .section.cream{background:var(--cream)}
-.heading{text-align:center;max-width:760px;margin:0 auto 42px}
-.heading h2{color:var(--navy);font-size:37px;margin-bottom:9px}
-.heading p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#fff;border:1px solid #eee;border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(7,27,82,.07)}
-.icon{width:50px;height:50px;border-radius:14px;background:#fff0f6;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:17px}
-.card h3{color:var(--navy);font-size:20px;margin-bottom:8px}
-.card p{color:var(--muted);font-size:15px}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 42px}
+.section-heading h2{color:var(--navy);font-size:37px;line-height:1.2;margin-bottom:9px}
+.section-heading p{color:var(--muted)}
+.quality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quality-card{background:#fff;border:1px solid #eee;border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(7,27,82,.07)}
+.quality-icon{width:50px;height:50px;border-radius:14px;background:#fff0f6;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:17px}
+.quality-card h3{color:var(--navy);font-size:20px;margin-bottom:8px}
+.quality-card p{color:var(--muted);font-size:15px}
 
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.two-col h2{color:var(--navy);font-size:38px;line-height:1.15;margin-bottom:16px}
-.two-col>div>p{color:var(--muted);margin-bottom:20px}
-.points{display:grid;gap:13px}
-.point{display:flex;gap:12px;align-items:flex-start}
+.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.promise-copy h2{color:var(--navy);font-size:38px;line-height:1.15;margin-bottom:16px}
+.promise-copy>p{color:var(--muted);margin-bottom:20px}
+.promise-list{display:grid;gap:13px}
+.promise-item{display:flex;gap:12px;align-items:flex-start}
 .check{width:27px;height:27px;min-width:27px;background:var(--pink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold}
-.point span:last-child{color:var(--muted)}
-.dark-box{background:var(--navy);color:#fff;border-radius:25px;padding:42px}
-.dark-box h3{font-size:29px;margin-bottom:12px}
-.dark-box p{color:#dce4f7}
-.dark-box strong{color:#fff}
+.promise-item-text{color:var(--muted)}
+.promise-item-text strong{color:var(--text)}
+.philosophy-box{background:var(--navy);color:#fff;border-radius:25px;padding:42px}
+.philosophy-box h3{font-size:29px;margin-bottom:12px}
+.philosophy-box p{color:#dce4f7}
+.philosophy-box .brand-line{margin-top:18px;color:#fff;font-weight:700}
 
 .cta{background:var(--navy);color:#fff;text-align:center;padding:65px 20px}
-.cta h2{font-size:38px;margin-bottom:10px}
+.cta h2{font-size:38px;line-height:1.2;margin-bottom:10px}
 .cta p{color:#dce4f7;max-width:650px;margin:0 auto 22px}
-.cta a{display:inline-block;background:var(--pink);padding:12px 24px;border-radius:25px;font-weight:700}
+.cta a{display:inline-block;background:var(--pink);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700}
 
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:950px){
- .nav{display:none;position:absolute;top:82px;left:4%;right:4%;background:#fff;border:1px solid #eee;border-radius:15px;box-shadow:0 12px 35px rgba(7,27,82,.12);padding:8px}
- .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0}
- .nav a{padding:12px 15px}
- .enquire{display:none}
- .menu{display:block}
- .hero-inner,.two-col{grid-template-columns:1fr;text-align:center}
- .hero p{margin:auto}
- .quality-circle{margin-top:10px;width:min(320px,75vw)}
- .points{text-align:left}
- .grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none;position:absolute;top:82px;left:4%;right:4%;background:#fff;border:1px solid #eee;border-radius:15px;box-shadow:0 12px 35px rgba(7,27,82,.12);padding:8px}
+  .nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .nav-links a{padding:12px 15px}
+  .enquire-btn{display:none}
+  .menu-btn{display:block}
+  .hero-inner,.promise-grid{grid-template-columns:1fr;text-align:center}
+  .hero-copy p{margin:0 auto}
+  .quality-badge{width:min(320px,75vw)}
+  .promise-list{text-align:left}
+  .quality-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
- .header{height:74px}
- .nav{top:74px}
- .logo{width:125px}
- .hero{padding:52px 0}
- .hero h1{font-size:42px}
- .hero p{font-size:16px}
- .section{padding:55px 0}
- .heading h2,.two-col h2,.cta h2{font-size:30px}
- .grid{grid-template-columns:1fr}
- .card{padding:25px}
- .dark-box{padding:30px;text-align:left}
- .quality-circle strong{font-size:40px}
+  .site-header{height:74px}
+  .nav-links{top:74px}
+  .logo{width:125px}
+  .quality-hero{padding:52px 0}
+  .hero-copy h1{font-size:42px}
+  .hero-copy p{font-size:16px}
+  .section{padding:55px 0}
+  .section-heading h2,.promise-copy h2,.cta h2{font-size:30px}
+  .quality-grid{grid-template-columns:1fr}
+  .quality-card{padding:25px}
+  .philosophy-box{padding:30px;text-align:left}
+  .quality-badge strong{font-size:40px}
 }
 </style>
 </head>
+
 <body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" aria-label="Patil Cold Home">
+      <img src="assets/logo.png" alt="Patil Cold" class="logo">
+    </a>
 
-<header class="header">
- <div class="container header-inner">
-  <a href="index.html"><img src="assets/logo.png" alt="Patil Cold" class="logo"></a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="quality.html" class="active">Quality</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <nav class="nav" id="nav">
-   <a href="index.html">Home</a>
-   <a href="about.html">About Us</a>
-   <a href="products.html">Products</a>
-   <a href="quality.html" class="active">Quality</a>
-   <a href="gallery.html">Gallery</a>
-   <a href="contact.html">Contact</a>
-  </nav>
+    <a class="enquire-btn" target="_blank" rel="noopener"
+       href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">
+       Enquire Now
+    </a>
 
-  <a class="enquire" target="_blank" href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">Enquire Now</a>
-  <button class="menu" id="menu" aria-label="Menu">☰</button>
- </div>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
 </header>
 
-<section class="hero">
- <div class="container hero-inner">
-  <div>
-   <div class="tag">Patil Cold Quality</div>
-   <h1>Quality You Can Taste.</h1>
-   <p>At Patil Cold, we believe great ice cream starts with attention to taste, consistency, hygiene and customer trust.</p>
-  </div>
-  <div class="quality-circle">
-   <div>
-    <strong>Quality</strong>
-    <span>in every scoop</span>
-   </div>
-  </div>
- </div>
-</section>
+<main>
+  <section class="quality-hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Patil Cold Quality</div>
+        <h1>Quality You Can Taste.</h1>
+        <p>
+          At Patil Cold, we believe great ice cream starts with attention to
+          taste, consistency, hygiene and customer trust.
+        </p>
+      </div>
 
-<section class="section">
- <div class="container">
-  <div class="heading">
-   <h2>Our Quality Commitment</h2>
-   <p>Our goal is to give customers a delicious and consistent Patil Cold experience.</p>
-  </div>
-  <div class="grid">
-   <div class="card">
-    <div class="icon">🥛</div>
-    <h3>Quality Ingredients</h3>
-    <p>We focus on suitable ingredients and flavour combinations to deliver an enjoyable ice cream experience.</p>
-   </div>
-   <div class="card">
-    <div class="icon">🧼</div>
-    <h3>Hygiene & Care</h3>
-    <p>Hygiene and careful product handling are important parts of our commitment to customers.</p>
-   </div>
-   <div class="card">
-    <div class="icon">✓</div>
-    <h3>Consistency</h3>
-    <p>We aim for consistent taste, texture and product experience across our range.</p>
-   </div>
-  </div>
- </div>
-</section>
+      <div class="quality-badge" aria-label="Quality in every scoop">
+        <div>
+          <strong>Quality</strong>
+          <span>in every scoop</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section cream">
- <div class="container two-col">
-  <div>
-   <div class="tag">Our Promise</div>
-   <h2>Made with care. Served with happiness.</h2>
-   <p>Patil Cold is being built with a simple promise: delicious ice cream, dependable quality and value for our customers.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Quality Commitment</h2>
+        <p>Our goal is to give customers a delicious and consistent Patil Cold experience.</p>
+      </div>
 
-   <div class="points">
-    <div class="point"><span class="check">✓</span><span><strong>Great Taste</strong><br>Flavours made for everyday enjoyment.</span></div>
-    <div class="point"><span class="check">✓</span><span><strong>Careful Handling</strong><br>Attention to product handling and storage.</span></div>
-    <div class="point"><span class="check">✓</span><span><strong>Customer Trust</strong><br>Building a brand customers can rely on.</span></div>
-   </div>
-  </div>
+      <div class="quality-grid">
+        <article class="quality-card">
+          <div class="quality-icon">🥛</div>
+          <h3>Quality Ingredients</h3>
+          <p>We focus on suitable ingredients and flavour combinations to deliver an enjoyable ice cream experience.</p>
+        </article>
 
-  <div class="dark-box">
-   <h3>Our Quality Philosophy</h3>
-   <p>“A good ice cream should not only taste delicious — it should create a consistent and enjoyable experience every time.”</p>
-   <p style="margin-top:18px"><strong>PATIL COLD</strong><br>Creamy. Fresh. Delicious.</p>
-  </div>
- </div>
-</section>
+        <article class="quality-card">
+          <div class="quality-icon">🧼</div>
+          <h3>Hygiene & Care</h3>
+          <p>Hygiene and careful product handling are important parts of our commitment to customers.</p>
+        </article>
 
-<section class="cta">
- <div class="container">
-  <h2>Want to know more?</h2>
-  <p>Contact Patil Cold for product information, business enquiries and other details.</p>
-  <a target="_blank" href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">Enquire on WhatsApp</a>
- </div>
-</section>
+        <article class="quality-card">
+          <div class="quality-icon">✓</div>
+          <h3>Consistent Quality</h3>
+          <p>We aim for consistent taste, texture and product experience across our range.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cream">
+    <div class="container promise-grid">
+      <div class="promise-copy">
+        <div class="eyebrow">Our Promise</div>
+        <h2>Made with care. Served with happiness.</h2>
+        <p>
+          Patil Cold is being built with a simple promise: delicious ice cream,
+          dependable quality and value for our customers.
+        </p>
+
+        <div class="promise-list">
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span class="promise-item-text"><strong>Great Taste</strong><br>Flavours made for everyday enjoyment.</span>
+          </div>
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span class="promise-item-text"><strong>Careful Handling</strong><br>Attention to product handling and storage.</span>
+          </div>
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span class="promise-item-text"><strong>Customer Trust</strong><br>Building a brand customers can rely on.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy-box">
+        <h3>Our Quality Philosophy</h3>
+        <p>
+          “A good ice cream should not only taste delicious — it should create
+          a consistent and enjoyable experience every time.”
+        </p>
+        <p class="brand-line">PATIL COLD<br>Creamy. Fresh. Delicious.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Want to know more?</h2>
+      <p>Contact Patil Cold for product information, business enquiries and other details.</p>
+      <a target="_blank" rel="noopener"
+         href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">
+         Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
 
 <script>
-(function(){
- const button=document.getElementById("menu");
- const nav=document.getElementById("nav");
- button.addEventListener("click",function(){
-   nav.classList.toggle("open");
-   button.textContent=nav.classList.contains("open")?"✕":"☰";
- });
- nav.querySelectorAll("a").forEach(function(link){
-   link.addEventListener("click",function(){
-     nav.classList.remove("open");
-     button.textContent="☰";
-   });
- });
+(function () {
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("open");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
 })();
 </script>
 </body>
