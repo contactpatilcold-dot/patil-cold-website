@@ -121,26 +121,27 @@ async function loadProducts() {
 
 
             // =========================================
-            // CREATE FLAVOUR CARD
+            // CREATE CLICKABLE FLAVOUR CARD
             // =========================================
 
-            const card = document.createElement("div");
+            const card = document.createElement("a");
 
             card.className = "product-card";
 
-
-            // Make flavour card clickable
+            card.href =
+                "products.html?flavour=" +
+                encodeURIComponent(flavour);
 
             card.style.cursor = "pointer";
 
-            card.onclick = function() {
+            card.style.textDecoration = "none";
 
-                window.location.href =
-                    "products.html?flavour=" +
-                    encodeURIComponent(flavour);
+            card.style.color = "inherit";
 
-            };
 
+            // =========================================
+            // CARD CONTENT
+            // =========================================
 
             card.innerHTML = `
 
