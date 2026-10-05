@@ -855,6 +855,8 @@ function closeForm() {
         .getElementById("productForm")
         .reset();
 
+    resetImageUpload();
+
     editingProductId = null;
 
 }
@@ -866,10 +868,7 @@ function closeForm() {
 
 document
     .getElementById("productForm")
-
-    // ================================
-    // PRODUCT IMAGE UPLOAD
-    // ================================
+    .addEventListener("submit", async function(event) {
 
     const imageFileInput = document.getElementById("imageFile");
     const imagePreview = document.getElementById("imagePreview");
@@ -973,8 +972,6 @@ document
         uploadStatus.textContent =
             "Select a PNG, JPG or WebP image.";
     }
-
-    .addEventListener("submit", async function(event) {
 
         event.preventDefault();
         const message =
