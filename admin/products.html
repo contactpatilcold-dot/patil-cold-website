@@ -277,6 +277,38 @@
             color: #777;
         }
 
+
+        .image-upload-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-preview {
+            width: 150px;
+            height: 150px;
+            border: 1px dashed #bbb;
+            border-radius: 8px;
+            object-fit: contain;
+            background: #fafafa;
+            display: none;
+            padding: 8px;
+        }
+
+        .upload-status {
+            font-size: 13px;
+            color: #666;
+            min-height: 18px;
+        }
+
+        .upload-status.success {
+            color: #16803c;
+        }
+
+        .upload-status.error {
+            color: #c62828;
+        }
+
         @media (max-width: 700px) {
 
             .header {
@@ -462,13 +494,24 @@
                     ></textarea>
 
                     <div class="form-group">
-    <label for="image_url">Image URL</label>
-    <input
-        type="url"
-        id="image_url"
-        placeholder="Paste product image URL"
-    >
-</div>
+                        <label for="imageFile">Product Image</label>
+                        <div class="image-upload-box">
+                            <input
+                                type="file"
+                                id="imageFile"
+                                accept="image/png,image/jpeg,image/webp"
+                            >
+                            <img
+                                id="imagePreview"
+                                class="image-preview"
+                                alt="Product image preview"
+                            >
+                            <div id="uploadStatus" class="upload-status">
+                                Select a PNG, JPG or WebP image.
+                            </div>
+                            <input type="hidden" id="image_url">
+                        </div>
+                    </div>
 
                 </div>
 
@@ -767,6 +810,8 @@ document
             .getElementById("productForm")
             .reset();
 
+        resetImageUpload();
+
         document
             .getElementById("available")
             .checked = true;
@@ -821,10 +866,134 @@ function closeForm() {
 
 document
     .getElementById("productForm")
+
+    // ================================
+    // PRODUCT IMAGE UPLOAD
+    // ================================
+
+    const imageFileInput = document.getElementById("imageFile");
+    const imagePreview = document.getElementById("imagePreview");
+    const uploadStatus = document.getElementById("uploadStatus");
+
+    imageFileInput.addEventListener("change", function() {
+        const file = this.files[0];
+
+        if (!file) return;
+
+        if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
+            this.value = "";
+            imagePreview.style.display = "none";
+            uploadStatus.className = "upload-status error";
+            uploadStatus.textContent =
+                "Please select a PNG, JPG or WebP image.";
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            this.value = "";
+            imagePreview.style.display = "none";
+            uploadStatus.className = "upload-status error";
+            uploadStatus.textContent =
+                "Image must be smaller than 5 MB.";
+            return;
+        }
+
+        imagePreview.src = URL.createObjectURL(file);
+        imagePreview.style.display = "block";
+        uploadStatus.className = "upload-status";
+        uploadStatus.textContent =
+            "Image selected. It will upload when you save the product.";
+    });
+
+    async function uploadProductImage() {
+        const file = imageFileInput.files[0];
+
+        // No new image: keep the current image when editing.
+        if (!file) {
+            return document.getElementById("image_url").value.trim();
+        }
+
+        const safeName = file.name
+            .toLowerCase()
+            .replace(/[^a-z0-9.-]+/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "");
+
+        const extension = safeName.includes(".")
+            ? safeName.substring(safeName.lastIndexOf("."))
+            : ".jpg";
+
+        const baseName = safeName
+            .replace(/\.[^/.]+$/, "")
+            .substring(0, 80) || "product-image";
+
+        const uniqueName =
+            `${baseName}-${Date.now()}${extension}`;
+
+        uploadStatus.className = "upload-status";
+        uploadStatus.textContent = "Uploading image...";
+
+        const { error: uploadError } =
+            await supabaseClient.storage
+                .from("product-image")
+                .upload(uniqueName, file, {
+                    cacheControl: "3600",
+                    upsert: false,
+                    contentType: file.type
+                });
+
+        if (uploadError) {
+            throw uploadError;
+        }
+
+        const { data } =
+            supabaseClient.storage
+                .from("product-image")
+                .getPublicUrl(uniqueName);
+
+        if (!data || !data.publicUrl) {
+            throw new Error("Could not create the public image URL.");
+        }
+
+        document.getElementById("image_url").value =
+            data.publicUrl;
+
+        uploadStatus.className = "upload-status success";
+        uploadStatus.textContent =
+            "Image uploaded successfully.";
+
+        return data.publicUrl;
+    }
+
+    function resetImageUpload() {
+        imageFileInput.value = "";
+        imagePreview.src = "";
+        imagePreview.style.display = "none";
+        uploadStatus.className = "upload-status";
+        uploadStatus.textContent =
+            "Select a PNG, JPG or WebP image.";
+    }
+
     .addEventListener("submit", async function(event) {
 
         event.preventDefault();
+        const message =
+            document.getElementById("formMessage");
 
+        message.style.color = "#333";
+        message.textContent = "Preparing product...";
+
+        let imageUrl;
+
+        try {
+            imageUrl = await uploadProductImage();
+        } catch (uploadError) {
+            console.error("Image upload error:", uploadError);
+            message.style.color = "red";
+            message.textContent =
+                "Image upload failed: " + uploadError.message;
+            return;
+        }
 
         const productData = {
 
@@ -855,15 +1024,10 @@ document
                 document.getElementById("featured").checked,
 
             sort_order:
-    Number(document.getElementById("sortOrder").value) || 0,
+                Number(document.getElementById("sortOrder").value) || 0,
 
-image_url:
-    document.getElementById("image_url").value.trim()
-};
-
-
-        const message =
-            document.getElementById("formMessage");
+            image_url: imageUrl
+        };
 
 
         message.style.color = "#333";
@@ -962,7 +1126,23 @@ async function editProduct(id) {
         data.description || "";
 
     document.getElementById("image_url").value =
-    data.image_url || "";
+        data.image_url || "";
+
+    imageFileInput.value = "";
+
+    if (data.image_url) {
+        imagePreview.src = data.image_url;
+        imagePreview.style.display = "block";
+        uploadStatus.className = "upload-status success";
+        uploadStatus.textContent =
+            "Current product image. Select a new file to replace it.";
+    } else {
+        imagePreview.src = "";
+        imagePreview.style.display = "none";
+        uploadStatus.className = "upload-status";
+        uploadStatus.textContent =
+            "Select a PNG, JPG or WebP image.";
+    }
 
     document.getElementById("available").checked =
         data.available;
