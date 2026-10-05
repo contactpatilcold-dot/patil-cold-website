@@ -31,7 +31,7 @@
                 <span class="logo-sub">COLD</span>
             </a>
 
-            <nav class="navbar">
+            <nav class="navbar" id="navbar">
 
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
@@ -45,7 +45,7 @@
 
             </nav>
 
-            <button class="menu-button" onclick="toggleMenu()">
+            <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu">
                 ☰
             </button>
 
@@ -151,13 +151,156 @@
             </div>
 
 
+            <!--
+                IMPORTANT:
+                These five flavour cards are intentionally STATIC.
+
+                They do NOT depend on the Supabase products table.
+                Editing/deleting an individual SKU from the Admin Panel
+                therefore cannot remove a flavour from the homepage.
+
+                Each card opens the dynamic products page for that flavour.
+            -->
             <div class="product-grid" id="productGrid">
 
-                <!-- PRODUCT CARDS WILL LOAD HERE -->
+                <!-- VANILLA -->
+                <a href="products.html?flavour=Vanilla" class="product-card">
 
-                <div class="loading">
-                    Loading flavours...
-                </div>
+                    <div class="product-image">
+                        <img
+                            src="assets/products/vanilla.png"
+                            alt="Patil Cold Vanilla Ice Cream"
+                            loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Vanilla</h3>
+
+                        <p>
+                            Classic creamy vanilla ice cream
+                            loved by every generation.
+                        </p>
+
+                        <span class="product-link">
+                            View Products →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CHOCOLATE -->
+                <a href="products.html?flavour=Chocolate" class="product-card">
+
+                    <div class="product-image">
+                        <img
+                            src="assets/products/chocolate.png"
+                            alt="Patil Cold Chocolate Ice Cream"
+                            loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Chocolate</h3>
+
+                        <p>
+                            Rich and smooth chocolate ice cream
+                            for every chocolate lover.
+                        </p>
+
+                        <span class="product-link">
+                            View Products →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- BUTTERSCOTCH -->
+                <a href="products.html?flavour=Butterscotch" class="product-card">
+
+                    <div class="product-image">
+                        <img
+                            src="assets/products/butterscotch.png"
+                            alt="Patil Cold Butterscotch Ice Cream"
+                            loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Butterscotch</h3>
+
+                        <p>
+                            Creamy butterscotch with a delicious
+                            caramel-inspired taste.
+                        </p>
+
+                        <span class="product-link">
+                            View Products →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- MANGO -->
+                <a href="products.html?flavour=Mango" class="product-card">
+
+                    <div class="product-image">
+                        <img
+                            src="assets/products/mango.png"
+                            alt="Patil Cold Mango Ice Cream"
+                            loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Mango</h3>
+
+                        <p>
+                            Refreshing and fruity mango ice cream
+                            with a delicious summer taste.
+                        </p>
+
+                        <span class="product-link">
+                            View Products →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- STRAWBERRY -->
+                <a href="products.html?flavour=Strawberry" class="product-card">
+
+                    <div class="product-image">
+                        <img
+                            src="assets/products/strawberry.png"
+                            alt="Patil Cold Strawberry Ice Cream"
+                            loading="lazy">
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Strawberry</h3>
+
+                        <p>
+                            Fruity, creamy and refreshing strawberry
+                            ice cream for everyone.
+                        </p>
+
+                        <span class="product-link">
+                            View Products →
+                        </span>
+
+                    </div>
+
+                </a>
 
             </div>
 
@@ -337,11 +480,11 @@
                     Flavours
                 </h4>
 
-                <a href="#products">Vanilla</a>
-                <a href="#products">Chocolate</a>
-                <a href="#products">Butterscotch</a>
-                <a href="#products">Mango</a>
-                <a href="#products">Strawberry</a>
+                <a href="products.html?flavour=Vanilla">Vanilla</a>
+                <a href="products.html?flavour=Chocolate">Chocolate</a>
+                <a href="products.html?flavour=Butterscotch">Butterscotch</a>
+                <a href="products.html?flavour=Mango">Mango</a>
+                <a href="products.html?flavour=Strawberry">Strawberry</a>
 
             </div>
 
@@ -387,10 +530,28 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
-    <script src="js/main.js"></script>
+
+    <!-- Mobile menu only. The homepage no longer loads main.js,
+         so the homepage flavour list cannot be changed by the product database. -->
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById("navbar");
+
+            if (navbar) {
+                navbar.classList.toggle("active");
+            }
+        }
+
+        document.querySelectorAll(".navbar a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                const navbar = document.getElementById("navbar");
+
+                if (navbar) {
+                    navbar.classList.remove("active");
+                }
+            });
+        });
+    </script>
 
 </body>
-
 </html>
