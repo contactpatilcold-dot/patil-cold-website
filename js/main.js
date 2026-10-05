@@ -52,18 +52,18 @@ async function loadProducts() {
 
         if (error) {
 
-    console.error("Supabase error:", error);
+            console.error("Supabase error:", error);
 
-    productGrid.innerHTML = `
-        <div class="loading">
-            <h3>Product Loading Error</h3>
-            <p>${error.message}</p>
-            <p>Error Code: ${error.code || "N/A"}</p>
-        </div>
-    `;
+            productGrid.innerHTML = `
+                <div class="loading">
+                    <h3>Product Loading Error</h3>
+                    <p>${error.message}</p>
+                    <p>Error Code: ${error.code || "N/A"}</p>
+                </div>
+            `;
 
-    return;
-}
+            return;
+        }
 
 
         if (!data || data.length === 0) {
@@ -107,6 +107,7 @@ async function loadProducts() {
             const flavourClass = getFlavourClass(flavour);
 
             const emoji = getFlavourEmoji(flavour);
+
             const imagePath = getFlavourImage(flavour);
 
             const lowestPrice = Math.min(
@@ -119,9 +120,26 @@ async function loadProducts() {
                 .join(" | ");
 
 
+            // =========================================
+            // CREATE FLAVOUR CARD
+            // =========================================
+
             const card = document.createElement("div");
 
             card.className = "product-card";
+
+
+            // Make flavour card clickable
+
+            card.style.cursor = "pointer";
+
+            card.onclick = function() {
+
+                window.location.href =
+                    "products.html?flavour=" +
+                    encodeURIComponent(flavour);
+
+            };
 
 
             card.innerHTML = `
@@ -129,10 +147,10 @@ async function loadProducts() {
                 <div class="product-image ${flavourClass}">
 
                     <img
-    src="${firstProduct.image_url || imagePath}"
-    alt="Patil Cold ${flavour} Ice Cream"
-    loading="lazy"
->
+                        src="${firstProduct.image_url || imagePath}"
+                        alt="Patil Cold ${flavour} Ice Cream"
+                        loading="lazy"
+                    >
 
                 </div>
 
@@ -251,11 +269,13 @@ function getFlavourEmoji(flavour) {
 
 
 // =========================================
-// START
+// FLAVOUR IMAGE
 // =========================================
+
 function getFlavourImage(flavour) {
 
     const name = flavour.toLowerCase();
+
 
     if (name.includes("vanilla")) {
         return "assets/products/vanilla.png";
@@ -277,6 +297,14 @@ function getFlavourImage(flavour) {
         return "assets/products/strawberry.png";
     }
 
+
     return "";
+
 }
+
+
+// =========================================
+// START
+// =========================================
+
 loadProducts();
