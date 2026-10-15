@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Patil Cold - Products</title>
+    <title>Patil Cold Ice Cream Products | Vanilla, Chocolate, Mango & More</title>
+    <meta name="description" content="Explore Patil Cold ice cream products in Vanilla, Chocolate, Butterscotch, Mango and Strawberry, with pack sizes and prices.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://patilcold.in/products.html">
 
     <style>
         * {
@@ -18,9 +21,6 @@
             color: #17213a;
         }
 
-        /* =========================
-           PATIL COLD HEADER
-           ========================= */
         .header {
             position: sticky;
             top: 0;
@@ -123,6 +123,35 @@
             margin-top: 10px;
             color: #687084;
             font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .flavour-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto 28px;
+        }
+
+        .flavour-links a {
+            display: inline-block;
+            padding: 10px 17px;
+            border-radius: 25px;
+            color: #071b4a;
+            background: #fff;
+            border: 1px solid #e8edf5;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .flavour-links a:hover {
+            color: #fff;
+            background: #ef1857;
+            border-color: #ef1857;
         }
 
         .products-container {
@@ -137,12 +166,25 @@
             gap: 25px;
         }
 
-        /* Flavour-specific page theme */
-        body.theme-vanilla { background: #fff3d6; }
-        body.theme-chocolate { background: #f1ded2; }
-        body.theme-butterscotch { background: #ffe8a8; }
-        body.theme-mango { background: #fff0b0; }
-        body.theme-strawberry { background: #ffe0e7; }
+        body.theme-vanilla {
+            background: #fff3d6;
+        }
+
+        body.theme-chocolate {
+            background: #f1ded2;
+        }
+
+        body.theme-butterscotch {
+            background: #ffe8a8;
+        }
+
+        body.theme-mango {
+            background: #fff0b0;
+        }
+
+        body.theme-strawberry {
+            background: #ffe0e7;
+        }
 
         .theme-banner {
             width: 90%;
@@ -158,11 +200,25 @@
             border: 1px solid rgba(7,27,74,0.07);
         }
 
-        body.theme-vanilla .theme-banner { background: #ffe8a6; }
-        body.theme-chocolate .theme-banner { background: #dfc0ad; }
-        body.theme-butterscotch .theme-banner { background: #ffd978; }
-        body.theme-mango .theme-banner { background: #ffdc63; }
-        body.theme-strawberry .theme-banner { background: #ffc1cf; }
+        body.theme-vanilla .theme-banner {
+            background: #ffe8a6;
+        }
+
+        body.theme-chocolate .theme-banner {
+            background: #dfc0ad;
+        }
+
+        body.theme-butterscotch .theme-banner {
+            background: #ffd978;
+        }
+
+        body.theme-mango .theme-banner {
+            background: #ffdc63;
+        }
+
+        body.theme-strawberry .theme-banner {
+            background: #ffc1cf;
+        }
 
         .product-card {
             background: white;
@@ -439,12 +495,21 @@
 </header>
 
 <section class="hero">
-    <h1 id="flavourTitle">Our Ice Cream</h1>
+    <h1 id="flavourTitle">Our Ice Cream Collection</h1>
 
     <p id="flavourSubtitle">
-        Discover our delicious ice cream range.
+        Explore Patil Cold ice cream in Vanilla, Chocolate, Butterscotch, Mango and Strawberry.
     </p>
 </section>
+
+<nav class="flavour-links" aria-label="Browse ice cream flavours">
+    <a href="products.html">All Products</a>
+    <a href="products.html?flavour=Vanilla">Vanilla</a>
+    <a href="products.html?flavour=Chocolate">Chocolate</a>
+    <a href="products.html?flavour=Butterscotch">Butterscotch</a>
+    <a href="products.html?flavour=Mango">Mango</a>
+    <a href="products.html?flavour=Strawberry">Strawberry</a>
+</nav>
 
 <div id="themeBanner" class="theme-banner" style="display:none;"></div>
 
@@ -452,13 +517,11 @@
 
     <div id="productGrid" class="product-grid">
         <div class="loading">
-            Loading delicious products...
+            Loading Patil Cold ice cream products...
         </div>
     </div>
 
 </main>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
@@ -499,6 +562,7 @@ function applyFlavourTheme(flavour) {
         document.body.classList.add(theme);
 
         const banner = document.getElementById("themeBanner");
+
         if (banner) {
             banner.textContent = message;
             banner.style.display = "block";
@@ -506,9 +570,7 @@ function applyFlavourTheme(flavour) {
     }
 }
 
-
 async function loadFlavourProducts() {
-
     const productGrid = document.getElementById("productGrid");
     const flavourTitle = document.getElementById("flavourTitle");
     const flavourSubtitle = document.getElementById("flavourSubtitle");
@@ -518,146 +580,148 @@ async function loadFlavourProducts() {
 
     applyFlavourTheme(flavour);
 
-    if (!flavour) {
-        flavourTitle.textContent = "Our Ice Cream";
-        flavourSubtitle.textContent = "Please select a flavour.";
+    if (flavour) {
+        flavourTitle.textContent = flavour + " Ice Cream";
+        flavourSubtitle.textContent =
+            "Choose your favourite " + flavour.toLowerCase() + " ice cream.";
+    } else {
+        flavourTitle.textContent = "Our Ice Cream Collection";
+        flavourSubtitle.textContent =
+            "Explore Patil Cold ice cream in Vanilla, Chocolate, Butterscotch, Mango and Strawberry.";
+    }
 
+    if (typeof supabaseClient === "undefined" || !supabaseClient) {
         productGrid.innerHTML = `
-            <div class="empty">
-                <h3>No flavour selected.</h3>
-                <p>Please return to the home page and select a flavour.</p>
+            <div class="error">
+                <h3>Products temporarily unavailable</h3>
+                <p>Please try again later or contact Patil Cold for product details.</p>
             </div>
         `;
-
         return;
     }
 
-    flavourTitle.textContent = flavour + " Ice Cream";
-    flavourSubtitle.textContent =
-        "Choose your favourite " + flavour.toLowerCase() + " ice cream.";
+    try {
+        let productsQuery = supabaseClient
+            .from("products")
+            .select("*")
+            .eq("available", true);
 
-    const { data, error } = await supabaseClient
-        .from("products")
-        .select("*")
-        .eq("flavour", flavour)
-        .eq("available", true)
-        .order("sort_order", { ascending: true })
-        .order("price", { ascending: true });
+        if (flavour) {
+            productsQuery = productsQuery.eq("flavour", flavour);
+        }
 
-    if (error) {
-        console.error(error);
+        const { data, error } = await productsQuery
+            .order("sort_order", { ascending: true })
+            .order("price", { ascending: true });
+
+        if (error) {
+            console.error("Supabase product error:", error);
+
+            productGrid.innerHTML = `
+                <div class="error">
+                    <h3>Unable to load products</h3>
+                    <p>Please try again later or contact Patil Cold for product details.</p>
+                </div>
+            `;
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            productGrid.innerHTML = `
+                <div class="empty">
+                    <h3>${flavour ? "No " + escapeHtml(flavour) + " products available yet." : "Our products are being updated."}</h3>
+                    <p>Please check back soon or contact Patil Cold for more information.</p>
+                </div>
+            `;
+            return;
+        }
+
+        productGrid.innerHTML = "";
+
+        data.forEach(function(product) {
+            const card = document.createElement("article");
+            card.className = "product-card";
+
+            const fallbackImage = getFlavourImage(product.flavour);
+
+            const imageUrl =
+                product.image_url && product.image_url.trim()
+                    ? product.image_url
+                    : fallbackImage;
+
+            const mrpHtml =
+                product.mrp && Number(product.mrp) > Number(product.price)
+                    ? `
+                        <span class="mrp">
+                            ₹${formatPrice(product.mrp)}
+                        </span>
+                    `
+                    : "";
+
+            const featuredBadge =
+                product.featured
+                    ? `<span class="pack-badge">Featured</span>`
+                    : "";
+
+            card.innerHTML = `
+                <div class="product-image">
+                    <img
+                        src="${escapeHtml(imageUrl)}"
+                        alt="Patil Cold ${escapeHtml(product.flavour)} ${escapeHtml(product.size)} ice cream"
+                        loading="lazy"
+                        onerror="this.onerror=null; this.src='${escapeHtml(fallbackImage)}';"
+                    >
+
+                    ${featuredBadge}
+                </div>
+
+                <div class="product-info">
+                    <span class="pack-label">
+                        ${escapeHtml(product.size)} Pack
+                    </span>
+
+                    <h3>${escapeHtml(product.product_name)}</h3>
+
+                    <div class="size">
+                        Pack Size:
+                        <strong>${escapeHtml(product.size)}</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">
+                            ₹${formatPrice(product.price)}
+                        </span>
+
+                        ${mrpHtml}
+                    </div>
+
+                    <div class="description">
+                        ${escapeHtml(
+                            product.description ||
+                            "Delicious and creamy ice cream."
+                        )}
+                    </div>
+
+                    <span class="product-status">Available</span>
+
+                    <span class="view-details">Patil Cold Quality Ice Cream</span>
+                </div>
+            `;
+
+            productGrid.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Unexpected product loading error:", error);
 
         productGrid.innerHTML = `
             <div class="error">
-                <h3>Unable to load products</h3>
-                <p>Please try again later.</p>
+                <h3>Products temporarily unavailable</h3>
+                <p>Please try again later or contact Patil Cold for product details.</p>
             </div>
         `;
-
-        return;
     }
-
-    if (!data || data.length === 0) {
-        productGrid.innerHTML = `
-            <div class="empty">
-                <h3>No ${escapeHtml(flavour)} products available.</h3>
-                <p>Please check back soon.</p>
-            </div>
-        `;
-
-        return;
-    }
-
-    productGrid.innerHTML = "";
-
-    data.forEach(function(product) {
-
-        const card = document.createElement("article");
-        card.className = "product-card";
-
-        const fallbackImage = getFlavourImage(product.flavour);
-
-        const imageUrl =
-            product.image_url && product.image_url.trim()
-                ? product.image_url
-                : fallbackImage;
-
-        const mrpHtml =
-            product.mrp &&
-            Number(product.mrp) > Number(product.price)
-                ? `
-                    <span class="mrp">
-                        ₹${formatPrice(product.mrp)}
-                    </span>
-                `
-                : "";
-
-        const featuredBadge =
-            product.featured
-                ? `<span class="pack-badge">Featured</span>`
-                : "";
-
-        card.innerHTML = `
-            <div class="product-image">
-
-                <img
-                    src="${escapeHtml(imageUrl)}"
-                    alt="Patil Cold ${escapeHtml(product.flavour)} ${escapeHtml(product.size)}"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='${escapeHtml(fallbackImage)}';"
-                >
-
-                ${featuredBadge}
-
-            </div>
-
-            <div class="product-info">
-
-                <span class="pack-label">
-                    ${escapeHtml(product.size)} Pack
-                </span>
-
-                <h3>
-                    ${escapeHtml(product.product_name)}
-                </h3>
-
-                <div class="size">
-                    Pack Size:
-                    <strong>${escapeHtml(product.size)}</strong>
-                </div>
-
-                <div class="price-row">
-
-                    <span class="price">
-                        ₹${formatPrice(product.price)}
-                    </span>
-
-                    ${mrpHtml}
-
-                </div>
-
-                <div class="description">
-                    ${escapeHtml(
-                        product.description ||
-                        "Delicious and creamy ice cream."
-                    )}
-                </div>
-
-                <span class="product-status">
-                    Available
-                </span>
-
-                <span class="view-details">
-                    Product Details →
-                </span>
-
-            </div>
-        `;
-
-        productGrid.appendChild(card);
-    });
 }
-
 
 function formatPrice(value) {
     const number = Number(value);
@@ -671,9 +735,7 @@ function formatPrice(value) {
         : number.toFixed(2);
 }
 
-
 function getFlavourImage(flavour) {
-
     const name = String(flavour || "").toLowerCase();
 
     if (name.includes("vanilla"))
@@ -691,12 +753,10 @@ function getFlavourImage(flavour) {
     if (name.includes("strawberry"))
         return "assets/products/strawberry.webp";
 
-    return "";
+    return "assets/logo.webp";
 }
 
-
 function escapeHtml(value) {
-
     if (value === null || value === undefined) {
         return "";
     }
@@ -709,10 +769,8 @@ function escapeHtml(value) {
         .replace(/'/g, "&#039;");
 }
 
-
 loadFlavourProducts();
 </script>
-
 
 <script>
 (function () {
@@ -731,12 +789,4 @@ loadFlavourProducts();
     links.forEach(function (link) {
         link.addEventListener("click", function () {
             header.classList.remove("mobile-open");
-            button.setAttribute("aria-expanded", "false");
-            button.textContent = "☰";
-        });
-    });
-})();
-</script>
-
-</body>
-</html>
+            button.setAttribute("aria-expanded",
