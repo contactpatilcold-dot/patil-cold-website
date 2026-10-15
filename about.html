@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,41 +6,751 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Patil Cold</title>
 <meta name="description" content="Learn about Patil Cold, its founder Aniket Adhao, and our vision to bring quality, delicious and affordable ice cream to every family.">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0} :root{--navy:#071b52;--pink:#ff3f87;--cream:#fff8ef;--text:#20283a;--muted:#687188}
-html{scroll-behavior:smooth} body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6} a{text-decoration:none;color:inherit}.container{width:92%;max-width:1180px;margin:0 auto}
-.site-header{height:82px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:1000}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{display:block;width:145px;height:auto}.nav-links{display:flex;align-items:center;gap:27px;color:var(--navy);font-size:15px;font-weight:600}.nav-links a:hover,.nav-links a.active{color:var(--pink)}.enquire-btn{display:inline-block;background:var(--pink);color:#fff;padding:11px 21px;border-radius:25px;font-weight:700;white-space:nowrap}.menu-btn{display:none;background:transparent;border:0;color:var(--navy);font-size:28px;cursor:pointer}
-.about-hero{background:linear-gradient(120deg,#fff8ef 0%,#fff 60%,#fff1f7 100%);padding:72px 0}.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--pink);font-weight:800;margin-bottom:12px}.hero-copy h1{font-size:clamp(40px,5vw,62px);line-height:1.08;color:var(--navy);margin-bottom:18px}.hero-copy p{max-width:650px;color:var(--muted);font-size:18px}.hero-badge{width:min(390px,85vw);aspect-ratio:1;margin:auto;border-radius:50%;background:linear-gradient(145deg,#fff,#ffe1ed);border:12px solid #fff;box-shadow:0 20px 55px rgba(7,27,82,.13);display:flex;align-items:center;justify-content:center;text-align:center}.hero-badge strong{display:block;color:var(--navy);font-size:42px;line-height:1.05}.hero-badge span{display:block;color:var(--pink);font-size:18px;font-weight:800;margin-top:10px}
-.section{padding:75px 0}.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}.founder-card{background:var(--navy);color:#fff;border-radius:26px;padding:40px;text-align:center;box-shadow:0 18px 45px rgba(7,27,82,.14)}.founder-avatar{width:120px;height:120px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(145deg,#fff,#ffdce9);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:42px;font-weight:800}.founder-card h2{font-size:28px;margin-bottom:4px}.founder-role{color:#ffb5d0;font-weight:700;margin-bottom:18px}.founder-card p{color:#dce4f7;font-size:15px}.story h2{color:var(--navy);font-size:38px;line-height:1.15;margin-bottom:16px}.story p{color:var(--muted);margin-bottom:15px}.signature{margin-top:22px;color:var(--navy);font-weight:800;font-size:18px}
-.cream{background:var(--cream)}.section-heading{text-align:center;max-width:760px;margin:0 auto 42px}.section-heading h2{color:var(--navy);font-size:37px;line-height:1.2;margin-bottom:9px}.section-heading p{color:var(--muted)}.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.info-card{background:#fff;border:1px solid #eee;border-radius:20px;padding:32px;box-shadow:0 10px 30px rgba(7,27,82,.07)}.icon{width:52px;height:52px;border-radius:15px;background:#fff0f6;display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:18px}.info-card h3{color:var(--navy);font-size:22px;margin-bottom:8px}.info-card p{color:var(--muted);font-size:15px}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.why-card{padding:26px 20px;text-align:center;border:1px solid #eee;border-radius:18px;background:#fff}.why-card .icon{margin:0 auto 15px}.why-card h3{font-size:18px;color:var(--navy);margin-bottom:7px}.why-card p{font-size:14px;color:var(--muted)}
-.flavour-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.flavour-card{border-radius:18px;overflow:hidden;background:#fff;border:1px solid #eee;box-shadow:0 8px 24px rgba(7,27,82,.06)}.flavour-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f8f8f8}.flavour-card div{padding:13px;text-align:center}.flavour-card h3{font-size:16px;color:var(--navy)}
-.cta{background:var(--navy);color:#fff;text-align:center;padding:65px 20px}.cta h2{font-size:38px;line-height:1.2;margin-bottom:10px}.cta p{color:#dce4f7;max-width:650px;margin:0 auto 22px}.cta a{display:inline-block;background:var(--pink);color:#fff;padding:12px 24px;border-radius:25px;font-weight:700}
-@media(max-width:1000px){.nav-links{gap:17px}.flavour-grid{grid-template-columns:repeat(3,1fr)}.why-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:850px){.nav-links{display:none;position:absolute;top:82px;left:4%;right:4%;background:#fff;border:1px solid #eee;border-radius:15px;box-shadow:0 12px 35px rgba(7,27,82,.12);padding:8px}.nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:0}.nav-links a{padding:12px 15px}.enquire-btn{display:none}.menu-btn{display:block}.hero-inner,.founder-grid{grid-template-columns:1fr;text-align:center}.hero-copy p{margin:0 auto}.hero-badge{width:min(320px,75vw)}.story{text-align:left}.vision-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.site-header{height:74px}.nav-links{top:74px}.logo{width:125px}.about-hero{padding:52px 0}.hero-copy h1{font-size:42px}.hero-copy p{font-size:16px}.section{padding:55px 0}.section-heading h2,.story h2,.cta h2{font-size:30px}.founder-card{padding:30px 22px}.why-grid{grid-template-columns:1fr 1fr}.flavour-grid{grid-template-columns:1fr 1fr}}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #071b52;
+  --pink: #ff3f87;
+  --cream: #fff8ef;
+  --text: #20283a;
+  --muted: #687188;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.site-header {
+  height: 82px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Smaller logo */
+.logo {
+  display: block;
+  width: 110px;
+  max-height: 72px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pink);
+}
+
+.enquire-btn {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  padding: 11px 21px;
+  border-radius: 25px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--navy);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ABOUT HERO */
+.about-hero {
+  background: linear-gradient(
+    120deg,
+    #fff8ef 0%,
+    #fff 60%,
+    #fff1f7 100%
+  );
+  padding: 72px 0;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.08;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+.hero-copy p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* CIRCULAR ICE CREAM PHOTO */
+.hero-badge {
+  width: min(350px, 85vw);
+  aspect-ratio: 1;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fff, #ffe1ed);
+  border: 8px solid #fff;
+  box-shadow: 0 20px 55px rgba(7, 27, 82, 0.13);
+}
+
+.hero-badge img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* GENERAL SECTIONS */
+.section {
+  padding: 75px 0;
+}
+
+/* FOUNDER */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.founder-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 26px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(7, 27, 82, 0.14);
+}
+
+.founder-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff, #ffdce9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.founder-card h2 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.founder-role {
+  color: #ffb5d0;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.founder-card p {
+  color: #dce4f7;
+  font-size: 15px;
+}
+
+.story h2 {
+  color: var(--navy);
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.story p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.signature {
+  margin-top: 22px;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* VISION AND MISSION */
+.cream {
+  background: var(--cream);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 37px;
+  line-height: 1.2;
+  margin-bottom: 9px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(7, 27, 82, 0.07);
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: #fff0f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  color: var(--navy);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* WHY PATIL COLD */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.why-card {
+  padding: 26px 20px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.why-card .icon {
+  margin: 0 auto 15px;
+}
+
+.why-card h3 {
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 7px;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* FLAVOURS */
+.flavour-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.flavour-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 24px rgba(7, 27, 82, 0.06);
+}
+
+.flavour-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #f8f8f8;
+}
+
+.flavour-card div {
+  padding: 13px;
+  text-align: center;
+}
+
+.flavour-card h3 {
+  font-size: 16px;
+  color: var(--navy);
+}
+
+/* WHATSAPP CTA */
+.cta {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.cta h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: #dce4f7;
+  max-width: 650px;
+  margin: 0 auto 22px;
+}
+
+.cta a {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 17px;
+  }
+
+  .flavour-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 4%;
+    right: 4%;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(7, 27, 82, 0.12);
+    padding: 8px;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 12px 15px;
+  }
+
+  .enquire-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-inner,
+  .founder-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-copy p {
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    width: min(320px, 75vw);
+  }
+
+  .story {
+    text-align: left;
+  }
+
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    height: 74px;
+  }
+
+  .nav-links {
+    top: 74px;
+  }
+
+  .logo {
+    width: 100px;
+    max-height: 64px;
+  }
+
+  .about-hero {
+    padding: 52px 0;
+  }
+
+  .hero-copy h1 {
+    font-size: 42px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-heading h2,
+  .story h2,
+  .cta h2 {
+    font-size: 30px;
+  }
+
+  .founder-card {
+    padding: 30px 22px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .flavour-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 </style>
 </head>
+
 <body>
-<header class="site-header"><div class="container header-inner">
-<a href="index.html" aria-label="Patil Cold Home"><img src="assets/logo.png" alt="Patil Cold" class="logo"></a>
-<nav class="nav-links" id="navLinks" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html" class="active">About Us</a><a href="contact.html">Contact</a></nav>
-<a class="enquire-btn" target="_blank" rel="noopener" href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">Enquire Now</a>
-<button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-</div></header>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="index.html" aria-label="Patil Cold Home">
+      <img src="assets/logo.png" alt="Patil Cold" class="logo">
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a class="enquire-btn"
+       target="_blank"
+       rel="noopener"
+       href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">
+      Enquire Now
+    </a>
+
+    <button class="menu-btn" id="menuBtn" type="button"
+            aria-label="Open menu" aria-expanded="false">☰</button>
+
+  </div>
+</header>
+
 <main>
-<section class="about-hero"><div class="container hero-inner"><div class="hero-copy"><div class="eyebrow">About Patil Cold</div><h1>Happiness in Every Scoop.</h1><p>Patil Cold is built with a simple vision — to bring quality, delicious and affordable ice cream to every family.</p></div><div class="hero-badge"><div><strong>Creamy.<br>Fresh.<br>Delicious.</strong><span>Patil Cold</span></div></div></div></section>
-<section class="section"><div class="container founder-grid"><div class="founder-card"><div class="founder-avatar">AA</div><h2>Aniket Adhao</h2><div class="founder-role">Founder, Patil Cold | Electronics Engineer</div><p>Building Patil Cold with a vision to create a trusted ice cream brand focused on taste, quality and affordability.</p></div><div class="story"><div class="eyebrow">Our Founder</div><h2>A simple idea with a bigger vision.</h2><p>Hi, I’m <strong>Aniket Adhao</strong>, Founder of Patil Cold and an Electronics Engineer.</p><p>I founded Patil Cold with a vision to bring <strong>quality, delicious, and affordable ice cream</strong> to every family.</p><p>Our journey is driven by a focus on creating enjoyable products, building customer trust and growing Patil Cold into a recognised Indian ice cream brand.</p><div class="signature">— Aniket Adhao, Founder</div></div></div></section>
-<section class="section cream"><div class="container"><div class="section-heading"><h2>Our Vision &amp; Mission</h2><p>Building a brand around taste, value and customer happiness.</p></div><div class="vision-grid"><article class="info-card"><div class="icon">🎯</div><h3>Our Vision</h3><p>To build Patil Cold into a trusted Indian ice cream brand that brings delicious and affordable ice cream to families across India.</p></article><article class="info-card"><div class="icon">❤️</div><h3>Our Mission</h3><p>To focus on taste, consistent quality, customer satisfaction and value while continuously improving our products and brand experience.</p></article></div></div></section>
-<section class="section"><div class="container"><div class="section-heading"><h2>Why Patil Cold?</h2><p>Four simple things at the heart of our brand.</p></div><div class="why-grid"><article class="why-card"><div class="icon">🥛</div><h3>Quality</h3><p>We aim to deliver a consistent and enjoyable product experience.</p></article><article class="why-card"><div class="icon">🍦</div><h3>Great Taste</h3><p>Classic flavours made for everyday enjoyment.</p></article><article class="why-card"><div class="icon">💰</div><h3>Affordable</h3><p>Delicious ice cream designed to offer good value.</p></article><article class="why-card"><div class="icon">😊</div><h3>For Everyone</h3><p>A family-friendly brand made to create happy moments.</p></article></div></div></section>
-<section class="section cream"><div class="container"><div class="section-heading"><h2>Our Favourite Flavours</h2><p>Five core flavours that represent the Patil Cold experience.</p></div><div class="flavour-grid">
-<a class="flavour-card" href="products.html?flavour=Vanilla"><img src="assets/vanilla.png" alt="Patil Cold Vanilla"><div><h3>Vanilla</h3></div></a>
-<a class="flavour-card" href="products.html?flavour=Chocolate"><img src="assets/chocolate.png" alt="Patil Cold Chocolate"><div><h3>Chocolate</h3></div></a>
-<a class="flavour-card" href="products.html?flavour=Butterscotch"><img src="assets/butterscotch.png" alt="Patil Cold Butterscotch"><div><h3>Butterscotch</h3></div></a>
-<a class="flavour-card" href="products.html?flavour=Mango"><img src="assets/mango.png" alt="Patil Cold Mango"><div><h3>Mango</h3></div></a>
-<a class="flavour-card" href="products.html?flavour=Strawberry"><img src="assets/strawberry.png" alt="Patil Cold Strawberry"><div><h3>Strawberry</h3></div></a>
-</div></div></section>
-<section class="cta"><div class="container"><h2>Let’s create happier moments together.</h2><p>Connect with Patil Cold for product information, business enquiries and more details.</p><a target="_blank" rel="noopener" href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">Enquire on WhatsApp</a></div></section>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <div class="eyebrow">About Patil Cold</div>
+        <h1>Happiness in Every Scoop.</h1>
+        <p>
+          Patil Cold is built with a simple vision — to bring quality,
+          delicious and affordable ice cream to every family.
+        </p>
+      </div>
+
+      <div class="hero-badge">
+        <img src="assets/about-icecream.png"
+             alt="Delicious ice cream scoops with chocolate and strawberry">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section">
+    <div class="container founder-grid">
+
+      <div class="founder-card">
+        <div class="founder-avatar">AA</div>
+        <h2>Aniket Adhao</h2>
+        <div class="founder-role">
+          Founder, Patil Cold | Electronics Engineer
+        </div>
+        <p>
+          Building Patil Cold with a vision to create a trusted ice cream
+          brand focused on taste, quality and affordability.
+        </p>
+      </div>
+
+      <div class="story">
+        <div class="eyebrow">Our Founder</div>
+        <h2>A simple idea with a bigger vision.</h2>
+        <p>
+          Hi, I’m <strong>Aniket Adhao</strong>, Founder of Patil Cold
+          and an Electronics Engineer.
+        </p>
+        <p>
+          I founded Patil Cold with a vision to bring
+          <strong>quality, delicious, and affordable ice cream</strong>
+          to every family.
+        </p>
+        <p>
+          Our journey is driven by a focus on creating enjoyable products,
+          building customer trust and growing Patil Cold into a recognised
+          Indian ice cream brand.
+        </p>
+        <div class="signature">— Aniket Adhao, Founder</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VISION AND MISSION -->
+  <section class="section cream">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Our Vision &amp; Mission</h2>
+        <p>Building a brand around taste, value and customer happiness.</p>
+      </div>
+
+      <div class="vision-grid">
+
+        <article class="info-card">
+          <div class="icon">🎯</div>
+          <h3>Our Vision</h3>
+          <p>
+            To build Patil Cold into a trusted Indian ice cream brand
+            that brings delicious and affordable ice cream to families
+            across India.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <div class="icon">❤️</div>
+          <h3>Our Mission</h3>
+          <p>
+            To focus on taste, consistent quality, customer satisfaction
+            and value while continuously improving our products and
+            brand experience.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PATIL COLD -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Why Patil Cold?</h2>
+        <p>Four simple things at the heart of our brand.</p>
+      </div>
+
+      <div class="why-grid">
+
+        <article class="why-card">
+          <div class="icon">🥛</div>
+          <h3>Quality</h3>
+          <p>We aim to deliver a consistent and enjoyable product experience.</p>
+        </article>
+
+        <article class="why-card">
+          <div class="icon">🍦</div>
+          <h3>Great Taste</h3>
+          <p>Classic flavours made for everyday enjoyment.</p>
+        </article>
+
+        <article class="why-card">
+          <div class="icon">💰</div>
+          <h3>Affordable</h3>
+          <p>Delicious ice cream designed to offer good value.</p>
+        </article>
+
+        <article class="why-card">
+          <div class="icon">😊</div>
+          <h3>For Everyone</h3>
+          <p>A family-friendly brand made to create happy moments.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAVOURITE FLAVOURS -->
+  <section class="section cream">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Our Favourite Flavours</h2>
+        <p>Five core flavours that represent the Patil Cold experience.</p>
+      </div>
+
+      <div class="flavour-grid">
+
+        <a class="flavour-card" href="products.html?flavour=Vanilla">
+          <img src="assets/vanilla.png" alt="Patil Cold Vanilla">
+          <div><h3>Vanilla</h3></div>
+        </a>
+
+        <a class="flavour-card" href="products.html?flavour=Chocolate">
+          <img src="assets/chocolate.png" alt="Patil Cold Chocolate">
+          <div><h3>Chocolate</h3></div>
+        </a>
+
+        <a class="flavour-card" href="products.html?flavour=Butterscotch">
+          <img src="assets/butterscotch.png" alt="Patil Cold Butterscotch">
+          <div><h3>Butterscotch</h3></div>
+        </a>
+
+        <a class="flavour-card" href="products.html?flavour=Mango">
+          <img src="assets/mango.png" alt="Patil Cold Mango">
+          <div><h3>Mango</h3></div>
+        </a>
+
+        <a class="flavour-card" href="products.html?flavour=Strawberry">
+          <img src="assets/strawberry.png" alt="Patil Cold Strawberry">
+          <div><h3>Strawberry</h3></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Let’s create happier moments together.</h2>
+      <p>
+        Connect with Patil Cold for product information,
+        business enquiries and more details.
+      </p>
+      <a target="_blank"
+         rel="noopener"
+         href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you.">
+        Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
+
 </main>
-<script>(function(){const b=document.getElementById('menuBtn'),n=document.getElementById('navLinks');b.addEventListener('click',function(){const o=n.classList.toggle('open');b.textContent=o?'✕':'☰';b.setAttribute('aria-expanded',o?'true':'false')});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.textContent='☰';b.setAttribute('aria-expanded','false')})})})();</script>
-</body></html>
+
+<script>
+(function () {
+  const button = document.getElementById('menuBtn');
+  const nav = document.getElementById('navLinks');
+
+  button.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('open');
+
+    button.textContent = isOpen ? '✕' : '☰';
+    button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('open');
+      button.textContent = '☰';
+      button.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
