@@ -1,1 +1,532 @@
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Patil Cold</title>
+  <meta name="description" content="Contact Patil Cold for ice cream product information, business enquiries and distribution opportunities.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b2054;
+      --pink: #ff347d;
+      --cream: #fff8ef;
+      --muted: #60718c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee7df;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 24px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo img {
+      width: 100px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--pink);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 50px;
+      padding: 13px 25px;
+      background: var(--pink);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px #ff347d33;
+    }
+
+    .hero {
+      background: linear-gradient(110deg, #fffaf3, #ffe9ef);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      min-height: 280px;
+      margin: auto;
+      padding: 42px 24px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: 1.12;
+      margin: 12px 0;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .hero-art {
+      text-align: center;
+    }
+
+    .hero-art img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+    }
+
+    .contact-layout {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.05fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid #f0ece8;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 28px #0b20540a;
+    }
+
+    h2 {
+      font-size: 26px;
+      line-height: 1.3;
+      margin-bottom: 5px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .required {
+      color: var(--pink);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #dfe4eb;
+      background: #f9fafb;
+      border-radius: 9px;
+      color: var(--navy);
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px #ff347d18;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 3px;
+    }
+
+    .info-heading {
+      margin-bottom: 12px;
+    }
+
+    .info-card {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #f0ece8;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      transition: .2s;
+    }
+
+    a.info-card:hover {
+      border-color: #ffc0d6;
+      transform: translateY(-2px);
+    }
+
+    .info-icon {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      background: #ffe7f0;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+    }
+
+    .info-card h3 {
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .map {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 12px;
+      height: 230px;
+      background: #eee;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 54px 24px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: clamp(25px, 3.5vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      color: #e5eafb;
+      margin-bottom: 22px;
+    }
+
+    .cta .btn {
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      background: #07183f;
+      color: #dce5ff;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 16px;
+        gap: 10px;
+      }
+
+      .logo img {
+        width: 78px;
+        height: 52px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+        padding: 8px 0;
+        font-size: 14px;
+      }
+
+      .nav > .btn {
+        padding: 10px 15px;
+        font-size: 13px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 35px 20px 20px;
+      }
+
+      .hero-art img {
+        max-height: 200px;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        padding: 18px 14px;
+      }
+
+      .panel {
+        padding: 21px 17px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html" aria-label="Patil Cold home">
+        <img src="assets/logo.png" alt="Patil Cold logo">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+
+      <a class="btn" href="https://wa.me/917666582152">Enquire Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h1>We’d Love to<br>Hear from You!</h1>
+          <p>Have a question, feedback or business enquiry?</p>
+          <p>Feel free to reach out to us. We’re always happy to connect.</p>
+        </div>
+
+        <div class="hero-art">
+          <img
+            src="assets/products/images/about-icecream.png"
+            alt="Delicious Patil Cold ice cream"
+            onerror="this.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-layout">
+      <div class="panel">
+        <h2>Send Us a Message</h2>
+        <p class="intro">Fill out the form below and we'll help you as soon as possible.</p>
+
+        <form id="contactForm">
+          <div class="field">
+            <label for="name">Your Name <span class="required">*</span></label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number">
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject <span class="required">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option>Product Enquiry</option>
+              <option>Retailer / Distributor Enquiry</option>
+              <option>Bulk Order</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Your Message <span class="required">*</span></label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button class="btn submit" type="submit">➤ &nbsp; Send Message</button>
+          <p class="intro" style="margin:12px 0 0">
+            This form opens WhatsApp with your message ready to send.
+          </p>
+        </form>
+      </div>
+
+      <div>
+        <div class="info-heading">
+          <h2 style="font-size:22px">Contact Information</h2>
+          <p class="muted" style="font-size:13px">Reach out to us through any of these channels.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3>Our Location</h3>
+            <p>Pune, Maharashtra, India</p>
+          </div>
+        </div>
+
+        <a class="info-card" href="mailto:contactpatilcold@gmail.com">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3>Email Us</h3>
+            <p>contactpatilcold@gmail.com</p>
+          </div>
+        </a>
+
+        <a class="info-card" href="https://wa.me/917666582152">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3>Call / WhatsApp</h3>
+            <p>+91 7666582152</p>
+          </div>
+        </a>
+
+        <a class="info-card" href="https://www.instagram.com/patilcold/" target="_blank" rel="noopener noreferrer">
+          <div class="info-icon">📷</div>
+          <div>
+            <h3>Instagram</h3>
+            <p>@patilcold</p>
+          </div>
+        </a>
+
+        <h2 style="font-size:22px; margin-top:26px">Find Us</h2>
+        <p class="muted" style="font-size:13px">Our location in Pune, Maharashtra.</p>
+
+        <div class="map">
+          <iframe
+            title="Map showing Pune, Maharashtra"
+            src="https://maps.google.com/maps?q=Pune%2C%20Maharashtra%2C%20India&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Let’s Create Sweeter Moments Together.</h2>
+      <p>Whether you have a question, feedback or business enquiry,<br>
+        we’re always happy to connect.</p>
+      <a class="btn"
+         href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20would%20like%20to%20make%20an%20enquiry.">
+        ☎ &nbsp; Enquire on WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Patil Cold. All rights reserved.
+    &nbsp; | &nbsp; Taste the Real Happiness.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Hello Patil Cold!%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Phone: " + encodeURIComponent(phone || "Not provided") + "%0A" +
+        "Subject: " + encodeURIComponent(subject) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+      window.open("https://wa.me/917666582152?text=" + text, "_blank");
+    });
+  </script>
+</body>
+</html>
+```
