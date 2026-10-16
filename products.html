@@ -22,6 +22,7 @@
             color: #17213a;
         }
 
+        /* HEADER */
         .header {
             position: sticky;
             top: 0;
@@ -32,18 +33,22 @@
         }
 
         .header-inner {
+            position: relative;
             width: min(1180px, 92%);
             min-height: 82px;
             margin: 0 auto;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: space-between;
             gap: 24px;
         }
 
         .brand-logo {
             display: inline-flex;
             align-items: center;
+            justify-self: start;
+            grid-column: 1;
+            grid-row: 1;
             flex: 0 0 auto;
         }
 
@@ -54,12 +59,15 @@
             display: block;
         }
 
+        /* CENTER NAVIGATION */
         .main-nav {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             gap: 25px;
-            flex: 1;
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: center;
         }
 
         .main-nav a {
@@ -79,7 +87,12 @@
             color: #ef1857;
         }
 
+        /* ENQUIRE BUTTON ON RIGHT */
         .main-nav .nav-enquire {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -93,7 +106,7 @@
 
         .main-nav .nav-enquire:hover {
             color: #fff;
-            transform: translateY(-2px);
+            transform: translateY(calc(-50% - 2px));
         }
 
         .menu-button {
@@ -109,6 +122,7 @@
             cursor: pointer;
         }
 
+        /* HERO */
         .hero {
             text-align: center;
             padding: 55px 20px 35px;
@@ -127,6 +141,7 @@
             line-height: 1.6;
         }
 
+        /* FLAVOUR FILTERS */
         .flavour-links {
             display: flex;
             flex-wrap: wrap;
@@ -155,6 +170,7 @@
             border-color: #ef1857;
         }
 
+        /* PRODUCT GRID */
         .products-container {
             width: 90%;
             max-width: 1200px;
@@ -167,6 +183,7 @@
             gap: 25px;
         }
 
+        /* FLAVOUR THEMES */
         body.theme-vanilla {
             background: #fff3d6;
         }
@@ -221,6 +238,7 @@
             background: #ffc1cf;
         }
 
+        /* PRODUCT CARDS */
         .product-card {
             background: white;
             border-radius: 16px;
@@ -359,7 +377,12 @@
             margin-bottom: 8px;
         }
 
-        @media (max-width: 1050px) {
+        /* TABLET / SMALL DESKTOP */
+        @media (max-width: 1050px) and (min-width: 851px) {
+            .header-inner {
+                gap: 14px;
+            }
+
             .main-nav {
                 gap: 17px;
             }
@@ -373,9 +396,11 @@
             }
         }
 
+        /* MOBILE NAVIGATION */
         @media (max-width: 850px) {
             .header-inner {
                 min-height: 72px;
+                grid-template-columns: 1fr auto;
             }
 
             .brand-logo img {
@@ -389,6 +414,8 @@
 
             .menu-button {
                 display: inline-flex;
+                grid-column: 2;
+                grid-row: 1;
                 align-items: center;
                 justify-content: center;
             }
@@ -399,6 +426,8 @@
                 top: 72px;
                 left: 0;
                 right: 0;
+                grid-column: auto;
+                grid-row: auto;
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0;
@@ -416,13 +445,21 @@
             }
 
             .header.mobile-open .main-nav .nav-enquire {
+                position: static;
+                transform: none;
                 width: 100%;
                 margin: 10px 0 7px;
+                padding: 13px 23px;
                 text-align: center;
                 border: 0;
             }
+
+            .header.mobile-open .main-nav .nav-enquire:hover {
+                transform: translateY(-2px);
+            }
         }
 
+        /* PRODUCT RESPONSIVENESS */
         @media (max-width: 1000px) {
             .product-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -477,6 +514,7 @@
             <a href="about.html">About Us</a>
             <a href="products.html">Products</a>
             <a href="contact.html">Contact</a>
+
             <a
                 href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20am%20interested%20in%20your%20ice%20cream%20products.%20Please%20share%20more%20details.%20Thank%20you."
                 class="nav-enquire"
@@ -516,13 +554,11 @@
 <div id="themeBanner" class="theme-banner" style="display:none;"></div>
 
 <main class="products-container">
-
     <div id="productGrid" class="product-grid">
         <div class="loading">
             Loading Patil Cold ice cream products...
         </div>
     </div>
-
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -791,4 +827,12 @@ loadFlavourProducts();
     links.forEach(function (link) {
         link.addEventListener("click", function () {
             header.classList.remove("mobile-open");
-            button.setAttribute("aria-expanded",
+            button.setAttribute("aria-expanded", "false");
+            button.textContent = "☰";
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
