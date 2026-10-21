@@ -4,65 +4,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#20140F">
 
-  <title>Patil Cold | Taste the Real Happiness</title>
-
-  <meta name="description" content="Discover Patil Cold ice cream — delicious flavours, irresistible treats and affordable moments of happiness for everyone.">
-  <meta name="theme-color" content="#17130F">
-
-  <link rel="icon" type="image/png" href="assets/patilcold-favicon.png">
+  <title>Patil Cold — Taste the Real Happiness</title>
+  <meta name="description" content="Discover Patil Cold, an Indian ice cream brand bringing delightful flavours and little moments of happiness to every generation.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================
-       PATIL COLD — PREMIUM HOMEPAGE
-       Midnight | Chocolate | Ivory | Gold
-    ========================================= */
+    /* ==========================================
+       PATIL COLD
+       Luxury chocolate • champagne gold • ivory
+    ========================================== */
 
     :root {
-      --dark: #17130F;
-      --dark-soft: #241C15;
-      --chocolate: #493020;
-      --chocolate-light: #72513A;
-      --gold: #C8A66A;
-      --gold-light: #E5D1A7;
-      --ivory: #F8F3E9;
-      --cream: #F0E7D8;
-      --white: #FFFFFF;
-      --text: #2B241D;
-      --muted: #786F64;
-      --border: rgba(73, 48, 32, 0.13);
-      --shadow: 0 20px 55px rgba(23, 19, 15, 0.10);
-      --container: 1240px;
+      --espresso: #20140F;
+      --espresso-2: #2B1B13;
+      --cocoa: #493023;
+      --mocha: #79543D;
+      --gold: #C7A46A;
+      --gold-light: #E6D2A7;
+      --vanilla: #F7F0E4;
+      --cream: #EDE0CB;
+      --paper: #FFFAF2;
+      --ink: #291B14;
+      --muted: #8B7B6B;
+      --line: rgba(73, 48, 35, .17);
+      --serif: "Italiana", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --container: 1320px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 85px;
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: var(--ivory);
-      line-height: 1.7;
-      overflow-x: hidden;
+      background: var(--vanilla);
+      color: var(--ink);
+      font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     img {
       display: block;
-      max-width: 100%;
+      width: 100%;
     }
 
     a {
@@ -70,182 +66,167 @@
       text-decoration: none;
     }
 
-    button,
-    input {
+    button {
       font: inherit;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+    ::selection {
+      background: var(--gold);
+      color: var(--espresso);
     }
 
     .container {
-      width: min(92%, var(--container));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 100px 0;
-    }
-
-    .section-ivory {
-      background: var(--ivory);
-    }
-
-    .section-white {
-      background: #FFFCF6;
-    }
-
-    .section-dark {
-      background: var(--dark);
-      color: var(--white);
+      width: min(91%, var(--container));
+      margin-inline: auto;
     }
 
     .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      color: var(--chocolate-light);
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 9px;
       letter-spacing: 3px;
+      font-weight: 800;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 28px;
+      width: 30px;
       height: 1px;
       background: var(--gold);
     }
 
-    .section-heading {
-      max-width: 700px;
-      margin: 0 auto 48px;
-      text-align: center;
+    .serif {
+      font-family: var(--serif);
+      font-weight: 400;
     }
 
-    .section-heading .eyebrow {
-      justify-content: center;
-      margin-bottom: 17px;
-    }
-
-    .section-heading h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--dark);
-      font-size: clamp(34px, 4.2vw, 51px);
-      font-weight: 600;
-      line-height: 1.18;
-      letter-spacing: -1px;
-    }
-
-    .section-heading p {
-      max-width: 570px;
-      margin: 15px auto 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
+    .gold {
+      color: var(--gold-light);
     }
 
     .button {
       min-height: 49px;
+      padding: 0 23px;
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      gap: 12px;
-      padding: 13px 25px;
+      justify-content: center;
+      gap: 16px;
       border: 1px solid transparent;
-      border-radius: 5px;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.3px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      transition: .3s ease;
       cursor: pointer;
-      transition: background .25s ease, color .25s ease,
-                  border-color .25s ease, transform .25s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
     }
 
     .button-gold {
       background: var(--gold);
-      color: var(--dark);
+      color: var(--espresso);
     }
 
     .button-gold:hover {
       background: var(--gold-light);
-    }
-
-    .button-outline {
-      background: transparent;
-      border-color: rgba(255, 255, 255, .5);
-      color: var(--white);
-    }
-
-    .button-outline:hover {
-      background: var(--white);
-      color: var(--dark);
+      transform: translateY(-3px);
     }
 
     .button-dark {
-      background: var(--dark);
-      color: var(--white);
+      background: var(--espresso);
+      color: var(--vanilla);
     }
 
     .button-dark:hover {
-      background: var(--chocolate);
+      background: var(--cocoa);
+      transform: translateY(-3px);
     }
 
-    .text-link {
-      display: inline-flex;
+    .button-light {
+      border-color: rgba(255,255,255,.48);
+      color: white;
+      background: transparent;
+    }
+
+    .button-light:hover {
+      background: white;
+      color: var(--espresso);
+    }
+
+    .arrow {
+      font-size: 17px;
+      line-height: 1;
+      transition: transform .25s ease;
+    }
+
+    a:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* HEADER */
+
+    .topline {
+      min-height: 29px;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
-      color: var(--chocolate);
-      font-size: 12px;
-      font-weight: 800;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 5px;
-      transition: color .2s ease;
+      padding: 5px 12px;
+      background: var(--espresso);
+      color: var(--gold-light);
+      font-size: 8px;
+      letter-spacing: 2.3px;
+      text-align: center;
+      text-transform: uppercase;
     }
 
-    .text-link:hover {
-      color: var(--chocolate-light);
-    }
-
-    /* =========================================
-       HEADER
-    ========================================= */
-
-    .site-header {
+    .header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      height: 84px;
-      background: rgba(248, 243, 233, .97);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
+      z-index: 100;
+      background: rgba(247,240,228,.97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
 
-    .header-inner {
-      height: 100%;
-      display: flex;
+    .nav {
+      height: 79px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
     }
 
     .brand {
+      width: fit-content;
       display: flex;
       align-items: center;
-      flex-shrink: 0;
+      gap: 11px;
     }
 
-    .logo {
-      width: 120px;
-      height: 70px;
+    .brand img {
+      width: 76px;
+      height: 63px;
       object-fit: contain;
+    }
+
+    .brand-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-wordmark strong {
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .brand-wordmark span {
+      margin-top: 6px;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: 2.4px;
     }
 
     .nav-links {
@@ -255,28 +236,23 @@
     }
 
     .nav-links a {
+      padding-block: 10px;
       position: relative;
-      padding: 8px 0;
-      color: var(--dark);
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 700;
-      transition: color .2s ease;
+      color: #544237;
+      transition: color .2s;
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
-      bottom: 1px;
+      bottom: 3px;
       left: 0;
+      height: 1px;
       width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width .25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--chocolate-light);
+      background: var(--mocha);
+      transition: width .25s;
     }
 
     .nav-links a:hover::after,
@@ -284,809 +260,878 @@
       width: 100%;
     }
 
-    .header-actions {
+    .nav-right {
+      justify-self: end;
       display: flex;
       align-items: center;
       gap: 15px;
     }
 
-    .header-actions .button {
-      min-height: 43px;
-      padding: 11px 19px;
+    .nav-right .button {
+      min-height: 41px;
+      padding-inline: 17px;
+      font-size: 9px;
     }
 
-    .menu-btn {
+    .menu-toggle {
       display: none;
-      width: 43px;
-      height: 43px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
       background: transparent;
-      color: var(--dark);
-      font-size: 23px;
+      color: var(--espresso);
+      font-size: 22px;
       cursor: pointer;
     }
 
-    /* =========================================
-       HERO
-    ========================================= */
+    /* HERO */
 
     .hero {
       position: relative;
+      min-height: 650px;
       overflow: hidden;
-      isolation: isolate;
-      min-height: 610px;
-      display: flex;
-      align-items: center;
-      padding: 76px 0 85px;
-      background:
-        radial-gradient(ellipse at 80% 45%,
-          rgba(200, 166, 106, .12), transparent 40%),
-        linear-gradient(115deg, #F8F3E9, #EDE1CF);
+      background: var(--espresso);
+      color: var(--vanilla);
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      z-index: -1;
-      width: 500px;
-      height: 500px;
-      right: -190px;
-      top: -220px;
-      border: 1px solid rgba(73, 48, 32, .10);
-      border-radius: 50%;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 18% 40%, rgba(135,83,49,.24), transparent 43%),
+        linear-gradient(90deg, rgba(32,20,15,1) 0%, rgba(32,20,15,.97) 38%, rgba(32,20,15,.32) 75%, rgba(32,20,15,.12) 100%);
+      z-index: 1;
     }
 
     .hero::after {
-      content: "";
+      content: "P";
       position: absolute;
-      z-index: -1;
-      width: 390px;
-      height: 390px;
-      right: -100px;
-      top: -170px;
-      border: 1px solid rgba(73, 48, 32, .08);
-      border-radius: 50%;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      align-items: center;
-      gap: 45px;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-      max-width: 570px;
-    }
-
-    .hero-copy .eyebrow {
-      margin-bottom: 25px;
-    }
-
-    .hero-copy h1 {
-      margin-bottom: 23px;
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--dark);
-      font-size: clamp(48px, 5.3vw, 74px);
-      font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: -2px;
-    }
-
-    .hero-copy h1 em {
-      color: var(--chocolate-light);
-      font-weight: 500;
-    }
-
-    .hero-copy > p {
-      max-width: 460px;
-      margin-bottom: 30px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .hero-promise {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      margin-top: 37px;
-    }
-
-    .promise-mark {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      border: 1px solid rgba(73, 48, 32, .20);
-      border-radius: 50%;
-      color: var(--chocolate);
-      font-size: 19px;
-    }
-
-    .hero-promise p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.65;
-    }
-
-    .hero-promise strong {
-      display: block;
-      color: var(--dark);
-      font-size: 12px;
-    }
-
-    .hero-visual {
-      position: relative;
-      width: 100%;
-      max-width: 620px;
-      justify-self: end;
-    }
-
-    .hero-image {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      aspect-ratio: 1.02;
-      border-radius: 48% 48% 8px 8px;
-      background: #E5D3B9;
-      box-shadow: 0 25px 65px rgba(43, 29, 17, .14);
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg,
-        rgba(23, 19, 15, .12), transparent 45%);
+      right: 32%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--serif);
+      font-size: 620px;
+      line-height: 1;
+      color: rgba(255,255,255,.025);
       pointer-events: none;
     }
 
-    .hero-seal {
+    .hero-image {
       position: absolute;
+      top: 0;
+      right: 0;
+      width: 64%;
+      height: 100%;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 48%;
+    }
+
+    .hero-content {
+      position: relative;
       z-index: 2;
-      top: 13%;
-      right: -15px;
-      width: 105px;
-      height: 105px;
+      width: min(91%, var(--container));
+      margin-inline: auto;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding-block: 75px;
+    }
+
+    .hero-copy {
+      width: 54%;
+      max-width: 650px;
+    }
+
+    .hero-copy .eyebrow {
+      margin-bottom: 28px;
+      color: var(--gold-light);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(63px, 7.4vw, 103px);
+      line-height: .98;
+      font-weight: 400;
+      letter-spacing: -2.5px;
+    }
+
+    .hero h1 em {
+      display: block;
+      margin-top: 8px;
+      color: var(--gold-light);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 390px;
+      margin-top: 26px;
+      color: #C8B8A8;
+      font-size: 12px;
+      line-height: 2.1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 33px;
+    }
+
+    .hero-signature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 48px;
+    }
+
+    .signature-line {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-signature p {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--gold-light);
+    }
+
+    .hero-signature small {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--sans);
+      font-size: 8px;
+      color: #B7A495;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-stamp {
+      position: absolute;
+      z-index: 3;
+      right: 8%;
+      bottom: 9%;
+      width: 110px;
+      height: 110px;
+      border: 1px solid rgba(230,210,167,.8);
+      outline: 1px solid rgba(230,210,167,.4);
+      outline-offset: 5px;
+      border-radius: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--gold-light);
-      border-radius: 50%;
-      background: var(--dark);
+      background: rgba(32,20,15,.68);
       color: var(--gold-light);
       text-align: center;
-      transform: rotate(9deg);
+      transform: rotate(-9deg);
     }
 
-    .hero-seal span {
-      font-size: 22px;
-      line-height: 1.3;
+    .hero-stamp .stamp-icon {
+      font-size: 24px;
+      line-height: 1.2;
     }
 
-    .hero-seal strong {
+    .hero-stamp span:last-child {
+      margin-top: 5px;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      line-height: 1.7;
+    }
+
+    /* BRAND MARQUEE */
+
+    .marquee {
+      overflow: hidden;
+      background: var(--gold);
+      color: var(--espresso);
+    }
+
+    .marquee-inner {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 22px;
+      padding: 12px 15px;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
       font-size: 9px;
-      letter-spacing: 1.2px;
-      line-height: 1.6;
-    }
-
-    .hero-caption {
-      position: absolute;
-      left: -25px;
-      bottom: 30px;
-      max-width: 225px;
-      padding: 18px 20px;
-      background: var(--ivory);
-      border-left: 3px solid var(--gold);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-caption span {
-      display: block;
-      color: var(--chocolate-light);
-      font-size: 9px;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-weight: 800;
     }
 
-    .hero-caption strong {
-      display: block;
-      margin-top: 4px;
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--dark);
-      font-size: 17px;
-      line-height: 1.4;
+    .marquee-item span {
+      font-size: 16px;
     }
 
-    /* =========================================
-       VALUE BAR
-    ========================================= */
+    /* SECTION HEADINGS */
 
-    .value-bar {
-      background: var(--dark);
-      color: var(--white);
-      border-top: 1px solid rgba(200, 166, 106, .3);
-      border-bottom: 1px solid rgba(200, 166, 106, .3);
+    .section {
+      padding: 110px 0;
     }
 
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    .section-heading {
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto 54px;
     }
 
-    .value-item {
-      min-height: 108px;
-      display: flex;
-      align-items: center;
+    .section-heading .eyebrow {
       justify-content: center;
-      gap: 14px;
-      padding: 20px 15px;
-      border-right: 1px solid rgba(255, 255, 255, .12);
+      color: var(--mocha);
+      margin-bottom: 20px;
     }
 
-    .value-item:last-child {
-      border-right: 0;
+    .section-heading h2 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 5.4vw, 68px);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -1px;
     }
 
-    .value-icon {
-      color: var(--gold);
-      font-size: 24px;
-    }
-
-    .value-item strong {
-      display: block;
-      color: var(--white);
-      font-size: 12px;
-    }
-
-    .value-item small {
-      display: block;
-      margin-top: 3px;
-      color: #C4B8A8;
-      font-size: 10px;
-      line-height: 1.5;
-    }
-
-    /* =========================================
-       PRODUCT COLLECTION
-    ========================================= */
-
-    .product-heading-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 42px;
-    }
-
-    .product-heading-row .section-heading {
-      margin: 0;
-      text-align: left;
-    }
-
-    .product-heading-row .section-heading .eyebrow {
-      justify-content: flex-start;
-    }
-
-    .product-heading-row .section-heading p {
-      margin-left: 0;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .product-card {
-      min-width: 0;
-      overflow: hidden;
-      background: #FFFCF6;
-      border: 1px solid var(--border);
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-    }
-
-    .product-photo {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 1 / 1;
-      background: var(--cream);
-    }
-
-    .product-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .5s ease;
-    }
-
-    .product-card:hover .product-photo img {
-      transform: scale(1.06);
-    }
-
-    .product-info {
-      padding: 21px 19px 23px;
-    }
-
-    .product-info h3 {
-      color: var(--dark);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .product-info p {
-      min-height: 47px;
-      margin: 9px 0 16px;
+    .section-heading p {
+      max-width: 480px;
+      margin: 17px auto 0;
       color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
+      font-size: 12px;
+      line-height: 2;
     }
 
-    .product-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--chocolate-light);
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    /* SIGNATURE FLAVOURS */
 
-    .product-link span {
-      transition: transform .2s ease;
-    }
-
-    .product-link:hover span {
-      transform: translateX(5px);
-    }
-
-    /* =========================================
-       FLAVOURS
-    ========================================= */
-
-    .flavour-section {
-      background: #EDE2D1;
+    .flavours {
+      background: var(--vanilla);
     }
 
     .flavour-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 18px;
+      gap: 17px;
     }
 
     .flavour-card {
-      display: block;
-      overflow: hidden;
-      background: var(--ivory);
-      border: 1px solid rgba(73, 48, 32, .12);
-      transition: transform .3s ease, box-shadow .3s ease;
+      position: relative;
+      min-width: 0;
+      background: var(--paper);
+      transition: transform .35s, box-shadow .35s;
     }
 
     .flavour-card:hover {
       transform: translateY(-7px);
-      box-shadow: 0 18px 35px rgba(23, 19, 15, .10);
+      box-shadow: 0 20px 40px rgba(47,29,19,.10);
     }
 
     .flavour-photo {
-      aspect-ratio: .95;
       overflow: hidden;
+      aspect-ratio: .83;
       background: var(--cream);
     }
 
     .flavour-photo img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .5s ease;
+      transition: transform .65s;
     }
 
-    .flavour-card:hover img {
+    .flavour-card:hover .flavour-photo img {
       transform: scale(1.07);
     }
 
+    .flavour-number {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      display: grid;
+      place-items: center;
+      width: 29px;
+      height: 29px;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 50%;
+      background: rgba(32,20,15,.67);
+      color: white;
+      font-size: 9px;
+    }
+
     .flavour-info {
-      padding: 15px 12px 18px;
+      padding: 20px 13px 23px;
       text-align: center;
     }
 
     .flavour-info h3 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--dark);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
     }
 
     .flavour-info p {
-      margin-top: 4px;
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 10px;
+      font-size: 9px;
+      line-height: 1.8;
     }
 
-    .center-action {
+    .flavour-info .mini-link {
+      display: inline-block;
+      margin-top: 14px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--gold);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .section-action {
+      margin-top: 42px;
       display: flex;
       justify-content: center;
-      margin-top: 38px;
     }
 
-    /* =========================================
-       BRAND STORY
-    ========================================= */
+    /* EDITORIAL BRAND STORY */
+
+    .story {
+      background: var(--espresso);
+      color: var(--vanilla);
+      overflow: hidden;
+    }
 
     .story-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.02fr .98fr;
       align-items: center;
-      gap: 75px;
+      gap: 90px;
     }
 
     .story-visual {
       position: relative;
+      padding: 0 28px 28px 0;
+    }
+
+    .story-visual::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 82%;
+      height: 86%;
+      border: 1px solid rgba(199,164,106,.55);
+      pointer-events: none;
     }
 
     .story-image {
+      position: relative;
+      z-index: 1;
       overflow: hidden;
-      aspect-ratio: .95;
-      background: var(--cream);
-      border-radius: 4px;
+      aspect-ratio: .84;
+      background: var(--cocoa);
     }
 
     .story-image img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
     .story-caption {
       position: absolute;
-      right: -18px;
-      bottom: 25px;
-      max-width: 220px;
-      padding: 21px 23px;
-      background: var(--dark);
-      color: var(--white);
-      border-bottom: 3px solid var(--gold);
+      z-index: 2;
+      bottom: 49px;
+      left: -18px;
+      padding: 19px 25px;
+      background: var(--gold);
+      color: var(--espresso);
     }
 
     .story-caption span {
-      color: var(--gold-light);
-      font-size: 9px;
-      text-transform: uppercase;
+      display: block;
+      font-size: 8px;
       letter-spacing: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .story-caption strong {
       display: block;
       margin-top: 5px;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 18px;
-      line-height: 1.4;
+      font-family: var(--serif);
+      font-size: 23px;
+      font-weight: 400;
     }
 
-    .story-content .eyebrow {
-      margin-bottom: 20px;
+    .story-copy .eyebrow {
+      margin-bottom: 24px;
+      color: var(--gold-light);
     }
 
-    .story-content h2 {
-      margin-bottom: 22px;
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--dark);
-      font-size: clamp(36px, 4.2vw, 51px);
-      font-weight: 600;
-      line-height: 1.2;
+    .story-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(49px, 5.3vw, 72px);
+      line-height: 1.04;
+      font-weight: 400;
+      letter-spacing: -1px;
     }
 
-    .story-content > p {
-      margin-bottom: 16px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 2;
+    .story-copy h2 em {
+      color: var(--gold-light);
+      font-style: normal;
     }
 
-    .story-content .button {
-      margin-top: 12px;
+    .story-copy > p {
+      max-width: 460px;
+      margin-top: 23px;
+      color: #BFB0A1;
+      font-size: 12px;
+      line-height: 2.1;
     }
 
-    .story-points {
+    .story-values {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 17px;
-      margin-top: 28px;
-      margin-bottom: 27px;
+      gap: 24px 18px;
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.13);
     }
 
-    .story-point {
+    .story-value {
       display: flex;
+      gap: 12px;
       align-items: flex-start;
-      gap: 10px;
     }
 
-    .story-point-icon {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      background: #EDE2D1;
-      color: var(--chocolate);
-      font-size: 14px;
+    .story-value-icon {
+      color: var(--gold);
+      font-size: 18px;
     }
 
-    .story-point strong {
+    .story-value strong {
       display: block;
-      color: var(--dark);
-      font-size: 11px;
-    }
-
-    .story-point small {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
       font-size: 10px;
-      line-height: 1.6;
+      color: var(--vanilla);
     }
 
-    /* =========================================
-       FAMILY-FRIENDLY BRAND BANNER
-    ========================================= */
+    .story-value span {
+      display: block;
+      margin-top: 5px;
+      color: #AFA092;
+      font-size: 9px;
+      line-height: 1.8;
+    }
 
-    .experience-banner {
-      padding: 70px 0;
-      background:
-        radial-gradient(ellipse at 80% 0%,
-          rgba(200, 166, 106, .14), transparent 38%),
-        var(--dark);
-      color: var(--white);
+    .story-copy .button {
+      margin-top: 35px;
+    }
+
+    /* PRODUCT COLLECTION */
+
+    .collection {
+      background: var(--paper);
+    }
+
+    .collection-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 35px;
+      margin-bottom: 42px;
+    }
+
+    .collection-top .section-heading {
+      text-align: left;
+      margin: 0;
+    }
+
+    .collection-top .section-heading .eyebrow {
+      justify-content: flex-start;
+    }
+
+    .collection-top .section-heading p {
+      margin-left: 0;
+    }
+
+    .collection-top .button {
+      flex-shrink: 0;
+      margin-bottom: 6px;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr .88fr;
+      gap: 17px;
+    }
+
+    .collection-card {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      background: var(--cocoa);
+      color: white;
+    }
+
+    .collection-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s;
+    }
+
+    .collection-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .collection-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(22,13,9,.92), rgba(22,13,9,.1) 70%);
+    }
+
+    .collection-card:first-child {
+      min-height: 485px;
+    }
+
+    .collection-card:first-child::before {
+      content: "OUR COLLECTION";
+      position: absolute;
+      z-index: 2;
+      top: 22px;
+      left: 22px;
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,.45);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .collection-copy {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 20px;
+      bottom: 25px;
+    }
+
+    .collection-copy span {
+      color: var(--gold-light);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .collection-copy h3 {
+      margin-top: 9px;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .collection-copy p {
+      max-width: 300px;
+      margin-top: 9px;
+      color: #E0D4C7;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .collection-copy .text-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 17px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* BRAND EXPERIENCE */
+
+    .experience {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      padding: 90px 0;
+    }
+
+    .experience::before {
+      content: "P";
+      position: absolute;
+      top: -180px;
+      left: -35px;
+      color: rgba(73,48,35,.045);
+      font-family: var(--serif);
+      font-size: 560px;
+      line-height: 1;
     }
 
     .experience-inner {
-      display: flex;
-      justify-content: space-between;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
       gap: 45px;
     }
 
-    .experience-copy {
-      max-width: 640px;
+    .experience .eyebrow {
+      margin-bottom: 18px;
+      color: var(--mocha);
     }
 
-    .experience-copy .eyebrow {
-      color: var(--gold-light);
-      margin-bottom: 16px;
+    .experience h2 {
+      font-family: var(--serif);
+      font-size: clamp(45px, 5.3vw, 69px);
+      line-height: 1.05;
+      font-weight: 400;
     }
 
-    .experience-copy h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(32px, 4vw, 45px);
-      font-weight: 600;
-      line-height: 1.25;
+    .experience p {
+      max-width: 520px;
+      margin-top: 17px;
+      color: #756556;
+      font-size: 12px;
+      line-height: 2;
     }
 
-    .experience-copy p {
-      max-width: 560px;
-      margin-top: 15px;
-      color: #C9BFB1;
-      font-size: 13px;
-      line-height: 1.9;
-    }
+    /* CONTACT */
 
-    .experience-inner .button {
-      flex-shrink: 0;
-    }
-
-    /* =========================================
-       CONTACT CTA
-    ========================================= */
-
-    .contact-section {
-      padding: 90px 0;
-      background: var(--cream);
+    .contact {
+      background: var(--vanilla);
+      padding: 100px 0;
     }
 
     .contact-panel {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 40px;
-      padding: 55px;
-      border: 1px solid rgba(73, 48, 32, .12);
-      background: var(--ivory);
-    }
-
-    .contact-panel .eyebrow {
-      margin-bottom: 16px;
-    }
-
-    .contact-panel h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(32px, 4vw, 43px);
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--dark);
-    }
-
-    .contact-panel p {
-      max-width: 580px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .contact-actions {
+      position: relative;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 60px;
+      background: var(--espresso);
+      color: var(--vanilla);
     }
 
-    /* =========================================
-       FOOTER
-    ========================================= */
-
-    .site-footer {
-      padding: 65px 0 20px;
-      background: var(--dark);
-      color: var(--white);
+    .contact-panel::after {
+      content: "✳";
+      position: absolute;
+      right: 29%;
+      top: -105px;
+      color: rgba(199,164,106,.09);
+      font-size: 350px;
+      line-height: 1;
+      pointer-events: none;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr .8fr 1fr;
-      gap: 65px;
-      padding-bottom: 43px;
+    .contact-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
     }
 
-    .footer-logo {
-      width: 130px;
-      height: 75px;
-      object-fit: contain;
-      object-position: left center;
-      margin-bottom: 15px;
-      filter: none;
+    .contact-copy .eyebrow {
+      margin-bottom: 18px;
+      color: var(--gold-light);
     }
 
-    .footer-brand p {
-      max-width: 320px;
-      color: #BDB2A4;
+    .contact-copy h2 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1.05;
+      font-weight: 400;
+    }
+
+    .contact-copy p {
+      margin-top: 15px;
+      color: #BEB0A2;
       font-size: 11px;
       line-height: 2;
     }
 
-    .footer-column h3 {
-      margin: 10px 0 21px;
+    .contact-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 205px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 65px 0 22px;
+      background: #170F0B;
+      color: var(--vanilla);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr .7fr 1fr;
+      gap: 65px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 20px;
+    }
+
+    .footer-brand .brand-wordmark strong {
       color: var(--gold-light);
-      font-size: 11px;
-      text-transform: uppercase;
+    }
+
+    .footer-brand .brand-wordmark span {
+      color: #C0B09F;
+    }
+
+    .footer-brand > p {
+      max-width: 340px;
+      color: #B3A394;
+      font-size: 10px;
+      line-height: 2.1;
+    }
+
+    .footer-heading {
+      margin: 10px 0 22px;
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 800;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .footer-column a,
-    .footer-column p {
+    .footer-links a,
+    .footer-links p {
       display: block;
-      margin-bottom: 12px;
-      color: #C7BDB0;
-      font-size: 11px;
-      line-height: 1.8;
+      margin-bottom: 13px;
+      color: #C2B5A8;
+      font-size: 10px;
       overflow-wrap: anywhere;
+      transition: color .2s;
     }
 
-    .footer-column a:hover {
+    .footer-links a:hover {
       color: var(--gold-light);
     }
 
     .footer-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, .12);
+      border-top: 1px solid rgba(255,255,255,.12);
     }
 
     .footer-bottom p,
     .footer-bottom a {
-      color: #AFA497;
-      font-size: 10px;
+      color: #A89A8B;
+      font-size: 9px;
     }
 
-    .footer-bottom a:hover {
-      color: var(--gold-light);
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
     }
 
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    @media (min-width: 1450px) {
-      .hero {
-        min-height: 690px;
+    /* RESPONSIVE */
+
+    @media (min-width: 1500px) {
+      .hero,
+      .hero-content {
+        min-height: 740px;
       }
     }
 
     @media (max-width: 1050px) {
       .nav-links {
-        gap: 19px;
+        gap: 18px;
       }
 
-      .hero-inner {
-        gap: 28px;
+      .brand-wordmark strong {
+        font-size: 20px;
       }
 
-      .hero-copy h1 {
-        font-size: 58px;
+      .brand img {
+        width: 61px;
       }
 
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .hero-copy {
+        width: 58%;
+      }
+
+      .hero h1 {
+        font-size: 76px;
       }
 
       .story-grid {
-        gap: 45px;
+        gap: 50px;
       }
 
-      .footer-grid {
+      .flavour-grid {
+        gap: 11px;
+      }
+
+      .flavour-info h3 {
+        font-size: 21px;
+      }
+
+      .collection-card {
+        min-height: 360px;
+      }
+
+      .collection-card:first-child {
+        min-height: 420px;
+      }
+
+      .footer-main {
         gap: 35px;
       }
     }
 
-    @media (max-width: 850px) {
-      .site-header {
-        height: 76px;
-      }
-
-      .logo {
-        width: 105px;
-        height: 65px;
-      }
-
-      .menu-btn {
-        display: grid;
-        place-items: center;
-      }
-
-      .header-actions > .button {
-        display: none;
+    @media (max-width: 820px) {
+      .nav {
+        grid-template-columns: 1fr auto;
       }
 
       .nav-links {
         position: absolute;
-        top: 76px;
-        left: 4%;
-        right: 4%;
         display: none;
+        top: 100%;
+        left: 4.5%;
+        right: 4.5%;
+        padding: 12px;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 10px;
-        background: var(--ivory);
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow);
+        background: var(--vanilla);
+        border: 1px solid var(--line);
+        box-shadow: 0 20px 35px rgba(32,20,15,.12);
       }
 
       .nav-links.open {
@@ -1094,95 +1139,129 @@
       }
 
       .nav-links a {
-        padding: 13px 16px;
+        padding: 15px;
       }
 
-      .nav-links a:hover,
-      .nav-links a.active {
-        background: #EDE2D1;
+      .nav-links a:hover {
+        background: var(--cream);
       }
 
       .nav-links a::after {
         display: none;
       }
 
-      .hero {
-        padding: 65px 0 80px;
+      .nav-right .button {
+        display: none;
       }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 55px;
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero,
+      .hero-content {
+        min-height: 760px;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(32,20,15,.94), rgba(32,20,15,.58)),
+          linear-gradient(0deg, rgba(32,20,15,.78), transparent 75%);
+      }
+
+      .hero-content {
+        align-items: flex-end;
+        padding-top: 90px;
+        padding-bottom: 100px;
       }
 
       .hero-copy {
-        max-width: 670px;
-        text-align: center;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 590px;
       }
 
-      .hero-copy .eyebrow {
-        justify-content: center;
+      .hero h1 {
+        font-size: clamp(70px, 11vw, 95px);
       }
 
-      .hero-copy > p {
-        margin-left: auto;
-        margin-right: auto;
+      .hero-stamp {
+        right: 7%;
+        top: 9%;
+        bottom: auto;
+        width: 88px;
+        height: 88px;
       }
 
-      .hero-buttons {
-        justify-content: center;
+      .hero-stamp .stamp-icon {
+        font-size: 19px;
       }
 
-      .hero-promise {
-        justify-content: center;
+      .marquee-inner {
+        justify-content: flex-start;
+        overflow: hidden;
       }
 
-      .hero-visual {
-        justify-self: center;
-        max-width: 500px;
-      }
-
-      .value-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .value-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .value-item:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255, 255, 255, .12);
+      .marquee-item {
+        flex-shrink: 0;
       }
 
       .flavour-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .flavour-card:nth-child(4),
+      .flavour-card:nth-child(5) {
+        display: block;
       }
 
       .story-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 60px;
       }
 
       .story-visual {
+        max-width: 510px;
         width: 100%;
-        max-width: 550px;
-        margin: 0 auto;
+        margin-inline: auto;
       }
 
-      .story-content {
+      .story-copy {
         max-width: 650px;
-        margin: 0 auto;
+        margin-inline: auto;
+      }
+
+      .collection-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .collection-card:first-child {
+        grid-column: 1 / -1;
+        min-height: 430px;
+      }
+
+      .collection-card {
+        min-height: 360px;
       }
 
       .experience-inner {
-        align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .experience-inner .button {
+        width: fit-content;
       }
 
       .contact-panel {
-        grid-template-columns: 1fr;
-        padding: 38px;
+        padding: 42px 35px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .contact-actions {
@@ -1190,8 +1269,9 @@
         flex-wrap: wrap;
       }
 
-      .footer-grid {
+      .footer-main {
         grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
       }
 
       .footer-brand {
@@ -1199,226 +1279,322 @@
       }
 
       .section {
-        padding: 75px 0;
+        padding: 80px 0;
       }
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 520px) {
       .container {
         width: 90%;
       }
 
-      .section {
-        padding: 60px 0;
+      .topline {
+        font-size: 7px;
+        letter-spacing: 1.3px;
       }
 
-      .hero {
-        padding: 54px 0 65px;
+      .nav {
+        height: 69px;
       }
 
-      .hero-copy h1 {
-        font-size: clamp(43px, 11vw, 56px);
+      .brand {
+        gap: 5px;
+      }
+
+      .brand img {
+        width: 51px;
+        height: 54px;
+      }
+
+      .brand-wordmark strong {
+        font-size: 19px;
+      }
+
+      .brand-wordmark span {
+        font-size: 6px;
+        letter-spacing: 1.7px;
+      }
+
+      .hero,
+      .hero-content {
+        min-height: 710px;
+      }
+
+      .hero-content {
+        width: 90%;
+        padding-top: 100px;
+        padding-bottom: 75px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(32,20,15,.98) 0%, rgba(32,20,15,.8) 43%, rgba(32,20,15,.37) 100%);
+      }
+
+      .hero-image img {
+        object-position: 56% center;
+      }
+
+      .hero h1 {
+        font-size: clamp(57px, 14vw, 73px);
         letter-spacing: -1.5px;
       }
 
-      .hero-copy > p {
-        font-size: 13px;
+      .hero-copy .eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
       }
 
-      .hero-buttons {
+      .hero-description {
+        font-size: 11px;
+        line-height: 1.9;
+        max-width: 340px;
+      }
+
+      .hero-actions {
         flex-direction: column;
         align-items: stretch;
       }
 
-      .hero-promise {
-        justify-content: flex-start;
-        text-align: left;
+      .hero-actions .button {
+        width: 100%;
       }
 
-      .hero-visual {
-        width: 94%;
-        margin-right: 5px;
+      .hero-signature {
+        margin-top: 34px;
       }
 
-      .hero-seal {
-        right: -14px;
-        width: 83px;
-        height: 83px;
+      .hero-stamp {
+        width: 72px;
+        height: 72px;
+        right: 9%;
+        top: 8%;
+        outline-offset: 3px;
       }
 
-      .hero-seal span {
-        font-size: 18px;
+      .hero-stamp .stamp-icon {
+        font-size: 15px;
       }
 
-      .hero-seal strong {
-        font-size: 7px;
+      .hero-stamp span:last-child {
+        font-size: 6px;
+        letter-spacing: .9px;
       }
 
-      .hero-caption {
-        left: -12px;
-        bottom: 20px;
-        max-width: 185px;
-        padding: 13px 15px;
+      .marquee-inner {
+        min-height: 45px;
+        gap: 17px;
       }
 
-      .hero-caption strong {
-        font-size: 14px;
+      .marquee-item {
+        font-size: 8px;
+        letter-spacing: 1.3px;
       }
 
-      .value-item {
-        min-height: 94px;
-        justify-content: flex-start;
-        padding: 15px 10px;
-        gap: 10px;
-      }
-
-      .value-icon {
-        font-size: 21px;
-      }
-
-      .value-item strong {
-        font-size: 10px;
-      }
-
-      .value-item small {
-        font-size: 9px;
-      }
-
-      .section-heading h2 {
-        font-size: 36px;
-      }
-
-      .section-heading p {
+      .marquee-item span {
         font-size: 12px;
       }
 
-      .product-heading-row {
-        align-items: flex-start;
-        flex-direction: column;
+      .section {
+        padding: 66px 0;
       }
 
-      .product-grid {
-        gap: 12px;
+      .section-heading {
+        margin-bottom: 34px;
       }
 
-      .product-info {
-        padding: 14px 12px 17px;
+      .section-heading h2 {
+        font-size: 47px;
       }
 
-      .product-info h3 {
-        font-size: 16px;
-      }
-
-      .product-info p {
-        min-height: 63px;
-        font-size: 10px;
-      }
-
-      .product-link {
-        font-size: 9px;
-        letter-spacing: .4px;
+      .section-heading p {
+        font-size: 11px;
       }
 
       .flavour-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        gap: 13px;
+      }
+
+      .flavour-photo {
+        aspect-ratio: .9;
+      }
+
+      .flavour-info {
+        padding: 15px 8px 18px;
       }
 
       .flavour-info h3 {
-        font-size: 15px;
+        font-size: 23px;
       }
 
-      .story-content h2 {
-        font-size: 38px;
+      .flavour-info p {
+        font-size: 8px;
       }
 
-      .story-content > p {
-        font-size: 12px;
+      .story-grid {
+        gap: 49px;
+      }
+
+      .story-visual {
+        padding: 0 17px 17px 0;
       }
 
       .story-caption {
-        right: -8px;
-        bottom: 17px;
-        max-width: 175px;
-        padding: 15px;
+        left: -7px;
+        bottom: 32px;
+        padding: 14px 17px;
       }
 
       .story-caption strong {
-        font-size: 15px;
+        font-size: 20px;
       }
 
-      .story-points {
-        gap: 16px 10px;
+      .story-copy h2 {
+        font-size: 55px;
       }
 
-      .story-point {
+      .story-copy > p {
+        font-size: 11px;
+      }
+
+      .story-values {
+        gap: 22px 13px;
+      }
+
+      .story-value {
         gap: 7px;
       }
 
-      .story-point strong {
-        font-size: 10px;
-      }
-
-      .story-point small {
+      .story-value strong {
         font-size: 9px;
       }
 
-      .experience-banner {
-        padding: 55px 0;
+      .story-value span {
+        font-size: 8px;
       }
 
-      .experience-copy h2 {
-        font-size: 34px;
+      .collection-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
       }
 
-      .experience-copy p {
-        font-size: 12px;
+      .collection-top .section-heading h2 {
+        font-size: 45px;
       }
 
-      .contact-section {
-        padding: 55px 0;
+      .collection-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .collection-card:first-child {
+        min-height: 410px;
+      }
+
+      .collection-card {
+        min-height: 290px;
+      }
+
+      .collection-copy {
+        left: 13px;
+        right: 10px;
+        bottom: 15px;
+      }
+
+      .collection-copy h3 {
+        font-size: 26px;
+      }
+
+      .collection-copy p {
+        font-size: 9px;
+      }
+
+      .collection-copy .text-arrow {
+        font-size: 8px;
+        gap: 7px;
+      }
+
+      .collection-card:first-child::before {
+        top: 13px;
+        left: 13px;
+        font-size: 7px;
+      }
+
+      .experience {
+        padding: 68px 0;
+      }
+
+      .experience h2 {
+        font-size: 53px;
+      }
+
+      .experience p {
+        font-size: 11px;
+      }
+
+      .contact {
+        padding: 60px 0;
       }
 
       .contact-panel {
-        gap: 25px;
-        padding: 27px 20px;
+        padding: 31px 22px;
+        gap: 26px;
       }
 
-      .contact-panel h2 {
-        font-size: 32px;
+      .contact-copy h2 {
+        font-size: 45px;
       }
 
-      .contact-panel p {
-        font-size: 12px;
+      .contact-copy p {
+        font-size: 10px;
       }
 
       .contact-actions {
+        width: 100%;
         flex-direction: column;
-        align-items: stretch;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 25px 20px;
+      .footer-main {
+        gap: 30px 20px;
       }
 
-      .footer-brand {
-        grid-column: 1 / -1;
+      .footer-brand .brand img {
+        width: 56px;
+      }
+
+      .footer-brand .brand-wordmark strong {
+        font-size: 21px;
+      }
+
+      .footer-links a,
+      .footer-links p {
+        font-size: 9px;
       }
 
       .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
-        gap: 9px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
       *,
       *::before,
       *::after {
-        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
         transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -1426,45 +1602,47 @@
 
 <body>
 
-  <!-- ======================================
-       HEADER
-  ======================================= -->
+  <!-- ANNOUNCEMENT -->
+  <div class="topline">
+    PATIL COLD &nbsp;·&nbsp; TASTE THE REAL HAPPINESS
+  </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
+  <!-- NAVIGATION -->
+  <header class="header">
+    <div class="container nav">
 
-      <a href="index.html" class="brand" aria-label="Patil Cold Home">
+      <a class="brand" href="index.html" aria-label="Patil Cold home">
         <img
           src="assets/logo.webp"
-          class="logo"
-          alt="Patil Cold">
+          alt="Patil Cold logo"
+          onerror="this.style.display='none'">
+
+        <span class="brand-wordmark">
+          <strong>PATIL COLD</strong>
+          <span>THE ART OF INDULGENCE</span>
+        </span>
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Products</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="products.html">Collection</a>
+        <a href="#flavours">Flavours</a>
         <a href="contact.html">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <a
-          class="button button-dark"
-          href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products."
-          target="_blank"
-          rel="noopener noreferrer">
-          Enquire Now <span>↗</span>
+      <div class="nav-right">
+        <a href="products.html" class="button button-dark">
+          Discover More <span class="arrow">↗</span>
         </a>
 
         <button
-          class="menu-btn"
-          id="menuBtn"
-          type="button"
-          aria-label="Open menu"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-controls="navLinks"
           aria-expanded="false"
-          aria-controls="navLinks">
-          ☰
-        </button>
+          type="button">☰</button>
       </div>
 
     </div>
@@ -1472,431 +1650,259 @@
 
   <main>
 
-    <!-- ======================================
-         HERO
-    ======================================= -->
-
+    <!-- HERO -->
     <section class="hero">
-      <div class="container hero-inner">
 
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1800&q=85"
+          alt="Richly styled scoops of delicious ice cream"
+          fetchpriority="high">
+      </div>
+
+      <div class="hero-content">
         <div class="hero-copy">
 
           <div class="eyebrow">
-            The Patil Cold Experience
+            A World of Delicious Possibilities
           </div>
 
           <h1>
-            Taste the<br>
-            <em>Real Happiness.</em>
+            Life is sweeter<br>
+            <em>with a scoop.</em>
           </h1>
 
-          <p>
-            Discover delicious ice cream made for life's little
-            celebrations. From timeless classics to irresistible
-            favourites, there's a scoop of happiness for everyone.
+          <p class="hero-description">
+            Discover the little luxury of a delicious ice cream.
+            From timeless classics to irresistible favourites,
+            Patil Cold brings a little more happiness to every moment.
           </p>
 
-          <div class="hero-buttons">
-            <a href="products.html" class="button button-dark">
-              Explore Our Products <span>→</span>
+          <div class="hero-actions">
+            <a href="products.html" class="button button-gold">
+              Explore the Collection
+              <span class="arrow">↗</span>
             </a>
 
-            <a href="about.html" class="button button-outline" style="border-color: var(--chocolate); color: var(--dark);">
-              Our Story <span>↗</span>
+            <a href="#story" class="button button-light">
+              Discover Our Story
             </a>
           </div>
 
-          <div class="hero-promise">
-            <div class="promise-mark" aria-hidden="true">✦</div>
+          <div class="hero-signature">
+            <div class="signature-line"></div>
             <p>
-              <strong>A Little Joy in Every Scoop</strong>
-              A delicious treat for every generation.
+              Taste the Real Happiness.
+              <small>The Patil Cold signature</small>
             </p>
           </div>
 
         </div>
+      </div>
 
-        <div class="hero-visual">
+      <div class="hero-stamp" aria-label="Made for happy moments">
+        <span class="stamp-icon">✳</span>
+        <span>MADE FOR<br>HAPPY MOMENTS</span>
+      </div>
 
-          <div class="hero-image">
-            <img
-              src="assets/about-icecream.webp"
-              alt="A tempting collection of creamy ice cream flavours"
-              fetchpriority="high">
-          </div>
+    </section>
 
-          <div class="hero-seal">
-            <span>✦</span>
-            <strong>MADE FOR<br>HAPPY MOMENTS</strong>
-          </div>
-
-          <div class="hero-caption">
-            <span>Discover the joy</span>
-            <strong>Your favourite moment starts here.</strong>
-          </div>
-
-        </div>
-
+    <!-- BRAND STRIP -->
+    <section class="marquee" aria-label="Patil Cold brand values">
+      <div class="marquee-inner">
+        <div class="marquee-item">A LITTLE LUXURY <span>✳</span></div>
+        <div class="marquee-item">TIMELESS FLAVOURS <span>✳</span></div>
+        <div class="marquee-item">MOMENTS TO SAVOUR <span>✳</span></div>
+        <div class="marquee-item">TASTE THE HAPPINESS <span>✳</span></div>
       </div>
     </section>
 
-    <!-- ======================================
-         BRAND VALUES
-    ======================================= -->
+    <!-- SIGNATURE FLAVOURS -->
+    <section class="section flavours" id="flavours">
 
-    <section class="value-bar">
-      <div class="container value-grid">
-
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true">❋</span>
-          <div>
-            <strong>Delightful Flavours</strong>
-            <small>Something for every craving</small>
-          </div>
-        </div>
-
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true">✦</span>
-          <div>
-            <strong>Quality Focused</strong>
-            <small>Care in every product</small>
-          </div>
-        </div>
-
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true">♡</span>
-          <div>
-            <strong>Everyday Enjoyment</strong>
-            <small>Little treats, bigger smiles</small>
-          </div>
-        </div>
-
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true">◇</span>
-          <div>
-            <strong>For Every Generation</strong>
-            <small>Made for sharing happiness</small>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================
-         PRODUCTS
-    ======================================= -->
-
-    <section class="section section-white" id="products">
       <div class="container">
 
-        <div class="product-heading-row">
-
-          <div class="section-heading">
-            <div class="eyebrow">Discover the Collection</div>
-
-            <h2>Something to Love.</h2>
-
-            <p>
-              Find your perfect treat, from refreshing individual
-              servings to generous packs made for sharing.
-            </p>
-          </div>
-
-          <a href="products.html" class="text-link">
-            View All Products <span>→</span>
-          </a>
-
-        </div>
-
-        <div class="product-grid">
-
-          <a class="product-card" href="products.html">
-            <div class="product-photo">
-              <img
-                src="assets/products/vanilla.webp"
-                alt="Patil Cold ice cream cones and cups"
-                loading="lazy">
-            </div>
-
-            <div class="product-info">
-              <h3>Cups &amp; Cones</h3>
-
-              <p>
-                A convenient little indulgence for your everyday
-                ice cream cravings.
-              </p>
-
-              <span class="product-link">
-                Discover More <span>→</span>
-              </span>
-            </div>
-          </a>
-
-          <a class="product-card" href="products.html">
-            <div class="product-photo">
-              <img
-                src="assets/products/chocolate.webp"
-                alt="Rich chocolate ice cream"
-                loading="lazy">
-            </div>
-
-            <div class="product-info">
-              <h3>Chocolate Treats</h3>
-
-              <p>
-                Chocolate-inspired delights for those who love
-                rich and satisfying flavours.
-              </p>
-
-              <span class="product-link">
-                Discover More <span>→</span>
-              </span>
-            </div>
-          </a>
-
-          <a class="product-card" href="products.html">
-            <div class="product-photo">
-              <img
-                src="assets/products/butterscotch.webp"
-                alt="Butterscotch ice cream"
-                loading="lazy">
-            </div>
-
-            <div class="product-info">
-              <h3>Classic Favourites</h3>
-
-              <p>
-                Familiar flavours that make everyday moments
-                feel a little more special.
-              </p>
-
-              <span class="product-link">
-                Discover More <span>→</span>
-              </span>
-            </div>
-          </a>
-
-          <a class="product-card" href="products.html">
-            <div class="product-photo">
-              <img
-                src="assets/products/mango.webp"
-                alt="Mango ice cream"
-                loading="lazy">
-            </div>
-
-            <div class="product-info">
-              <h3>Fruity Delights</h3>
-
-              <p>
-                Enjoy fruity favourites that bring a delightful
-                twist to your ice cream moments.
-              </p>
-
-              <span class="product-link">
-                Discover More <span>→</span>
-              </span>
-            </div>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================
-         FLAVOURS
-    ======================================= -->
-
-    <section class="section flavour-section" id="flavours">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="eyebrow">Made for Your Taste</div>
-
-          <h2>Meet Your New Favourite.</h2>
-
+        <div class="section-heading reveal">
+          <div class="eyebrow">The Signature Selection</div>
+          <h2>A flavour for <em>every feeling.</em></h2>
           <p>
-            Explore our signature flavour collection and find
-            the one that makes your day a little sweeter.
+            Some favourites never go out of style. Discover the
+            flavours that make an ordinary moment feel extraordinary.
           </p>
         </div>
 
         <div class="flavour-grid">
 
-          <a class="flavour-card"
-             href="products.html?flavour=Vanilla">
-
+          <a href="products.html?flavour=Vanilla"
+             class="flavour-card reveal">
             <div class="flavour-photo">
               <img
-                src="assets/products/vanilla.webp"
+                src="https://images.unsplash.com/photo-1560008581-09826d1de69e?auto=format&fit=crop&w=650&q=80"
                 alt="Vanilla ice cream"
                 loading="lazy">
             </div>
-
+            <span class="flavour-number">01</span>
             <div class="flavour-info">
               <h3>Vanilla</h3>
-              <p>A timeless classic</p>
+              <p>Beautifully classic.</p>
+              <span class="mini-link">Discover flavour</span>
             </div>
           </a>
 
-          <a class="flavour-card"
-             href="products.html?flavour=Chocolate">
-
+          <a href="products.html?flavour=Chocolate"
+             class="flavour-card reveal">
             <div class="flavour-photo">
               <img
-                src="assets/products/chocolate.webp"
+                src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=650&q=80"
                 alt="Chocolate ice cream"
                 loading="lazy">
             </div>
-
+            <span class="flavour-number">02</span>
             <div class="flavour-info">
               <h3>Chocolate</h3>
-              <p>A chocolate lover's delight</p>
+              <p>Pure cocoa indulgence.</p>
+              <span class="mini-link">Discover flavour</span>
             </div>
           </a>
 
-          <a class="flavour-card"
-             href="products.html?flavour=Butterscotch">
-
+          <a href="products.html?flavour=Butterscotch"
+             class="flavour-card reveal">
             <div class="flavour-photo">
               <img
-                src="assets/products/butterscotch.webp"
-                alt="Butterscotch ice cream"
+                src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=650&q=80"
+                alt="Butterscotch-inspired ice cream"
                 loading="lazy">
             </div>
-
+            <span class="flavour-number">03</span>
             <div class="flavour-info">
               <h3>Butterscotch</h3>
-              <p>Sweet and satisfying</p>
+              <p>Sweet, golden delight.</p>
+              <span class="mini-link">Discover flavour</span>
             </div>
           </a>
 
-          <a class="flavour-card"
-             href="products.html?flavour=Mango">
-
+          <a href="products.html?flavour=Mango"
+             class="flavour-card reveal">
             <div class="flavour-photo">
               <img
-                src="assets/products/mango.webp"
-                alt="Mango ice cream"
+                src="https://images.unsplash.com/photo-1501446529957-6226bd447c46?auto=format&fit=crop&w=650&q=80"
+                alt="Refreshing fruit-inspired frozen dessert"
                 loading="lazy">
             </div>
-
+            <span class="flavour-number">04</span>
             <div class="flavour-info">
               <h3>Mango</h3>
-              <p>A fruity favourite</p>
+              <p>A taste of sunshine.</p>
+              <span class="mini-link">Discover flavour</span>
             </div>
           </a>
 
-          <a class="flavour-card"
-             href="products.html?flavour=Strawberry">
-
+          <a href="products.html?flavour=Strawberry"
+             class="flavour-card reveal">
             <div class="flavour-photo">
               <img
-                src="assets/products/strawberry.webp"
-                alt="Strawberry ice cream"
+                src="https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=650&q=80"
+                alt="Strawberry-inspired ice cream"
                 loading="lazy">
             </div>
-
+            <span class="flavour-number">05</span>
             <div class="flavour-info">
               <h3>Strawberry</h3>
-              <p>A berry-inspired treat</p>
+              <p>A berry-sweet moment.</p>
+              <span class="mini-link">Discover flavour</span>
             </div>
           </a>
 
         </div>
 
-        <div class="center-action">
+        <div class="section-action reveal">
           <a href="products.html" class="button button-dark">
-            Explore All Flavours <span>→</span>
+            Explore All Products <span class="arrow">↗</span>
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- ======================================
-         ABOUT THE BRAND
-    ======================================= -->
+    <!-- BRAND STORY -->
+    <section class="section story" id="story">
 
-    <section class="section section-white" id="about">
       <div class="container story-grid">
 
-        <div class="story-visual">
-
+        <div class="story-visual reveal">
           <div class="story-image">
             <img
-              src="assets/about-icecream.webp"
-              alt="A delicious selection of Patil Cold ice cream"
+              src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1100&q=85"
+              alt="Beautifully presented ice cream treats"
               loading="lazy">
           </div>
 
           <div class="story-caption">
-            <span>The Patil Cold Philosophy</span>
-            <strong>Simple pleasures. Lasting memories.</strong>
+            <span>Our philosophy</span>
+            <strong>Joy in every moment.</strong>
           </div>
-
         </div>
 
-        <div class="story-content">
+        <div class="story-copy reveal">
 
-          <div class="eyebrow">A Little About Us</div>
+          <div class="eyebrow">A Story Made of Happiness</div>
 
           <h2>
-            More Than Ice Cream.<br>
-            A Feeling of Happiness.
+            Not just a dessert.<br>
+            <em>A little celebration.</em>
           </h2>
 
           <p>
-            At Patil Cold, we believe the best moments in life
-            are often the simplest. A family gathering, a get-together
-            with friends or a little reward after a long day —
-            ice cream has a way of bringing people together.
+            At Patil Cold, we believe happiness can be found in
+            life's simplest pleasures. A family gathering, a moment
+            with friends or a treat after a long day — ice cream
+            has a special way of bringing people together.
           </p>
 
           <p>
-            Our vision is to create a trusted Indian ice cream brand
-            with delightful flavours, accessible prices and products
-            that bring happiness to everyday life.
+            Our vision is to build a trusted Indian ice cream brand
+            with delightful flavours, accessible prices and a
+            distinctive identity that people remember.
           </p>
 
-          <div class="story-points">
+          <div class="story-values">
 
-            <div class="story-point">
-              <span class="story-point-icon" aria-hidden="true">✦</span>
+            <div class="story-value">
+              <span class="story-value-icon">✳</span>
               <div>
-                <strong>Quality Focus</strong>
-                <small>Committed to an enjoyable experience.</small>
+                <strong>Flavour First</strong>
+                <span>Delightful choices for different tastes.</span>
               </div>
             </div>
 
-            <div class="story-point">
-              <span class="story-point-icon" aria-hidden="true">♡</span>
+            <div class="story-value">
+              <span class="story-value-icon">◇</span>
               <div>
-                <strong>Made for Sharing</strong>
-                <small>Little moments worth celebrating.</small>
+                <strong>Quality Matters</strong>
+                <span>A focus on enjoyable product experiences.</span>
               </div>
             </div>
 
-            <div class="story-point">
-              <span class="story-point-icon" aria-hidden="true">◇</span>
+            <div class="story-value">
+              <span class="story-value-icon">♡</span>
               <div>
-                <strong>Accessible Treats</strong>
-                <small>Enjoyable choices at everyday prices.</small>
+                <strong>Made for Everyone</strong>
+                <span>Little treats for every generation.</span>
               </div>
             </div>
 
-            <div class="story-point">
-              <span class="story-point-icon" aria-hidden="true">❋</span>
+            <div class="story-value">
+              <span class="story-value-icon">✦</span>
               <div>
-                <strong>Flavour Variety</strong>
-                <small>Discover flavours for different tastes.</small>
+                <strong>Everyday Indulgence</strong>
+                <span>Simple pleasures worth sharing.</span>
               </div>
             </div>
 
           </div>
 
-          <a href="about.html" class="button button-dark">
-            Discover Our Story <span>→</span>
+          <a href="about.html" class="button button-gold">
+            More About Patil Cold <span class="arrow">↗</span>
           </a>
 
         </div>
@@ -1904,76 +1910,133 @@
       </div>
     </section>
 
-    <!-- ======================================
-         BRAND PROMOTION
-    ======================================= -->
+    <!-- PRODUCT COLLECTIONS -->
+    <section class="section collection" id="collection">
 
-    <section class="experience-banner">
-      <div class="container experience-inner">
+      <div class="container">
 
-        <div class="experience-copy">
+        <div class="collection-top">
 
-          <div class="eyebrow">Your Moment. Your Flavour.</div>
+          <div class="section-heading reveal">
+            <div class="eyebrow">Find Your Favourite</div>
+            <h2>Little treats.<br>Lovely moments.</h2>
+            <p>
+              Explore the Patil Cold collection and find a treat
+              for your own little moment of happiness.
+            </p>
+          </div>
 
-          <h2>
-            Happiness Tastes<br>
-            Better Together.
-          </h2>
-
-          <p>
-            Celebrate the little things, share a favourite flavour
-            and make room for more moments of happiness with Patil Cold.
-          </p>
+          <a href="products.html" class="button button-dark reveal">
+            View Collection <span class="arrow">↗</span>
+          </a>
 
         </div>
 
-        <a href="products.html" class="button button-gold">
-          Find Your Favourite <span>→</span>
+        <div class="collection-grid">
+
+          <a href="products.html" class="collection-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1100&q=85"
+              alt="Rich and delicious ice cream collection"
+              loading="lazy">
+
+            <div class="collection-copy">
+              <span>01 / The classics</span>
+              <h3>Timeless<br>Indulgence.</h3>
+              <p>Discover familiar favourites and delightful flavours.</p>
+              <span class="text-arrow">Explore collection <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+          <a href="products.html" class="collection-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=800&q=85"
+              alt="Ice cream served for a special treat"
+              loading="lazy">
+
+            <div class="collection-copy">
+              <span>02 / Your moment</span>
+              <h3>Everyday<br>Delights.</h3>
+              <p>A little happiness, whenever you want it.</p>
+              <span class="text-arrow">Discover more <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+          <a href="products.html" class="collection-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1501446529957-6226bd447c46?auto=format&fit=crop&w=800&q=85"
+              alt="Colourful frozen treats"
+              loading="lazy">
+
+            <div class="collection-copy">
+              <span>03 / Share the joy</span>
+              <h3>Made for<br>Memories.</h3>
+              <p>Discover treats for little celebrations and gatherings.</p>
+              <span class="text-arrow">Find your favourite <span class="arrow">→</span></span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="experience">
+      <div class="container experience-inner">
+
+        <div class="reveal">
+          <div class="eyebrow">The Patil Cold Feeling</div>
+          <h2>
+            Make room for<br>
+            <em>something sweet.</em>
+          </h2>
+          <p>
+            Because the best moments do not need a special occasion.
+            Sometimes, all it takes is your favourite ice cream.
+          </p>
+        </div>
+
+        <a href="products.html" class="button button-dark reveal">
+          Find Your Flavour <span class="arrow">↗</span>
         </a>
 
       </div>
     </section>
 
-    <!-- ======================================
-         CONTACT
-    ======================================= -->
+    <!-- CONTACT CTA -->
+    <section class="contact" id="contact">
 
-    <section class="contact-section" id="contact">
       <div class="container">
 
-        <div class="contact-panel">
+        <div class="contact-panel reveal">
 
-          <div>
-            <div class="eyebrow">Let's Talk Ice Cream</div>
+          <div class="contact-copy">
+            <div class="eyebrow">Let's Connect</div>
 
             <h2>
-              Have a Question?<br>
-              We'd Love to Hear From You.
+              Every great story<br>
+              starts with a hello.
             </h2>
 
             <p>
-              Connect with Patil Cold for product information,
-              availability and business enquiries.
+              Want to know more about Patil Cold, our products
+              or business opportunities? We would love to hear from you.
             </p>
           </div>
 
           <div class="contact-actions">
-
-            <a
-              class="button button-dark"
-              href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20would%20like%20more%20information%20about%20your%20ice%20cream%20products."
-              target="_blank"
-              rel="noopener noreferrer">
-              Enquire on WhatsApp <span>↗</span>
+            <a href="mailto:contactpatilcold@gmail.com"
+               class="button button-gold">
+              Email Us <span class="arrow">↗</span>
             </a>
 
-            <a
-              class="button"
-              style="border-color: var(--border);"
-              href="mailto:contactpatilcold@gmail.com">
-              Email Patil Cold <span>↗</span>
+            <a href="https://www.instagram.com/patilcold/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="button button-light">
+              Follow on Instagram <span class="arrow">↗</span>
             </a>
-
           </div>
 
         </div>
@@ -1983,139 +2046,130 @@
 
   </main>
 
-  <!-- ======================================
-       FOOTER
-  ======================================= -->
+  <!-- FOOTER -->
+  <footer class="footer">
 
-  <footer class="site-footer">
     <div class="container">
 
-      <div class="footer-grid">
+      <div class="footer-main">
 
         <div class="footer-brand">
 
-          <a href="index.html" aria-label="Patil Cold Home">
+          <a class="brand" href="index.html" aria-label="Patil Cold home">
             <img
               src="assets/logo.webp"
-              class="footer-logo"
-              alt="Patil Cold">
+              alt="Patil Cold logo"
+              onerror="this.style.display='none'">
+
+            <span class="brand-wordmark">
+              <strong>PATIL COLD</strong>
+              <span>TASTE THE REAL HAPPINESS</span>
+            </span>
           </a>
 
           <p>
-            Delicious ice cream, delightful flavours and little
-            moments of happiness. Discover the Patil Cold experience
-            and find a favourite for every occasion.
+            A distinctive Indian ice cream brand inspired by the
+            simple pleasure of delicious flavours and happy moments.
+            Discover your favourite with Patil Cold.
           </p>
 
         </div>
 
-        <div class="footer-column">
-
-          <h3>Explore</h3>
-
+        <div class="footer-links">
+          <h3 class="footer-heading">Discover</h3>
           <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Our Products</a>
-          <a href="contact.html">Contact Us</a>
-
+          <a href="about.html">Our Story</a>
+          <a href="products.html">Our Collection</a>
+          <a href="#flavours">Signature Flavours</a>
+          <a href="contact.html">Contact</a>
         </div>
 
-        <div class="footer-column">
-
-          <h3>Get in Touch</h3>
-
+        <div class="footer-links">
+          <h3 class="footer-heading">Stay Connected</h3>
           <a href="mailto:contactpatilcold@gmail.com">
             contactpatilcold@gmail.com
           </a>
-
-          <a
-            href="https://wa.me/917666582152"
-            target="_blank"
-            rel="noopener noreferrer">
-            WhatsApp Enquiries
-          </a>
-
-          <a
-            href="https://www.instagram.com/patilcold/"
-            target="_blank"
-            rel="noopener noreferrer">
+          <a href="https://www.instagram.com/patilcold/"
+             target="_blank"
+             rel="noopener noreferrer">
             Instagram · @patilcold
           </a>
-
+          <p>Patil Cold · India</p>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-
-        <p>
-          © <span id="currentYear">2026</span> Patil Cold.
-          Taste the Real Happiness.
-        </p>
-
-        <a href="contact.html">Get in Touch ↗</a>
-
+        <p>© <span id="year">2026</span> Patil Cold. All rights reserved.</p>
+        <a href="#top" id="backToTop">Back to the top ↑</a>
       </div>
 
     </div>
   </footer>
 
-  <!-- ======================================
-       JAVASCRIPT
-  ======================================= -->
-
   <script>
-    (function () {
-      const menuButton = document.getElementById("menuBtn");
-      const navigation = document.getElementById("navLinks");
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-      if (menuButton && navigation) {
+    menuToggle.addEventListener("click", function () {
+      const opened = navLinks.classList.toggle("open");
 
-        menuButton.addEventListener("click", function () {
-          const isOpen = navigation.classList.toggle("open");
+      menuToggle.textContent = opened ? "×" : "☰";
+      menuToggle.setAttribute("aria-expanded", String(opened));
+      menuToggle.setAttribute(
+        "aria-label",
+        opened ? "Close navigation" : "Open navigation"
+      );
+    });
 
-          menuButton.textContent = isOpen ? "✕" : "☰";
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+      });
+    });
 
-          menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-          );
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
 
-          menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close menu" : "Open menu"
-          );
-        });
+    // Automatic current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-        navigation.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            navigation.classList.remove("open");
+    // Subtle reveal animations, with accessibility fallback
+    const revealItems = document.querySelectorAll(".reveal");
 
-            menuButton.textContent = "☰";
+    if ("IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open menu");
-          });
-        });
-
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            navigation.classList.remove("open");
-
-            menuButton.textContent = "☰";
-
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open menu");
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
-      }
+      }, {
+        threshold: 0.12
+      });
 
-      const year = document.getElementById("currentYear");
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
-    })();
+    } else {
+      revealItems.forEach(function (item) {
+        item.classList.add("visible");
+      });
+    }
   </script>
 
 </body>
