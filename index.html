@@ -4,27 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff9f1">
-  <title>Patil Cold | Taste the Real Happiness</title>
-  <meta name="description" content="Explore Patil Cold ice cream flavours, family packs and B2B supply opportunities.">
-  <link rel="icon" href="assets/patilcold-favicon.png" type="image/png">
+  <meta name="theme-color" content="#fff8ef">
+  <title>Patil Cold | Website Under Maintenance</title>
+  <meta name="description" content="Patil Cold website is temporarily under maintenance. Contact us on WhatsApp for product enquiries, retail and B2B orders.">
 
+  <link rel="icon" href="assets/patilcold-favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #fff9f1;
-      --cream2: #fff4e5;
+      --cream: #fff8ef;
+      --cream-dark: #fff0dc;
       --red: #e91e3a;
       --red-dark: #c91430;
-      --brown: #4d2114;
-      --text: #30211b;
-      --muted: #76645a;
+      --brown: #542518;
+      --text: #34241e;
+      --muted: #78665b;
       --yellow: #ffc94d;
-      --line: #eee0d0;
-      --white: #fff;
     }
 
     * {
@@ -33,1058 +31,253 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 76px;
-    }
-
     body {
+      min-height: 100vh;
       font-family: "DM Sans", sans-serif;
       color: var(--text);
-      background: var(--cream);
-      overflow-x: hidden;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
+      background:
+        radial-gradient(ellipse at 10% 10%, #fff0d1 0%, transparent 32%),
+        radial-gradient(ellipse at 95% 85%, #ffe7d7 0%, transparent 34%),
+        var(--cream);
+      display: flex;
+      flex-direction: column;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
     }
 
-    button, input {
-      font: inherit;
-    }
-
-    .container {
-      width: 94%;
-      max-width: 1440px;
-      margin: auto;
-    }
-
-    .script {
-      font-family: "Pacifico", cursive;
-      font-weight: 400;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 11px 23px;
-      border: 0;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .btn-red {
-      background: var(--red);
-      color: white;
-    }
-
-    .btn-red:hover {
-      background: var(--red-dark);
-      transform: translateY(-2px);
-    }
-
-    /* HEADER */
-
     .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 251, 245, .97);
-      border-bottom: 1px solid rgba(232, 215, 196, .7);
-    }
-
-    .navbar {
-      min-height: 66px;
+      width: 100%;
+      padding: 15px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 22px;
-    }
-
-    .logo {
-      flex: 0 0 auto;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid #eddfcf;
+      background: rgba(255, 251, 245, .85);
     }
 
     .logo img {
-      width: 125px;
-      height: 59px;
+      width: 145px;
+      height: 65px;
       object-fit: contain;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(16px, 3vw, 36px);
-    }
-
-    .nav-links > a,
-    .business-menu summary {
+    .header-label {
+      color: var(--brown);
       font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 1.2px;
     }
 
-    .nav-links > a:hover,
-    .business-menu summary:hover {
-      color: var(--red);
-    }
-
-    .nav-links > a.active {
-      color: var(--red);
-      border-bottom: 2px solid var(--red);
-      padding-bottom: 7px;
-    }
-
-    .business-menu {
-      position: relative;
-    }
-
-    .business-menu summary {
-      list-style: none;
-    }
-
-    .business-menu summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 30px;
-      left: -12px;
-      width: 185px;
-      padding: 8px;
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      box-shadow: 0 8px 25px #542b1712;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 9px;
-      font-size: 12px;
-      border-radius: 7px;
-    }
-
-    .dropdown a:hover {
-      background: var(--cream2);
-      color: var(--red);
-    }
-
-    .header-right {
+    main {
+      flex: 1;
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
+      padding: 35px 20px 50px;
     }
 
-    .search {
-      display: flex;
-      align-items: center;
-      width: 178px;
-      border: 1px solid #e8dacc;
-      background: #fffdf9;
-      border-radius: 30px;
-      padding: 8px 12px;
-      gap: 6px;
-    }
-
-    .search input {
+    .maintenance {
       width: 100%;
-      min-width: 0;
-      border: 0;
-      outline: none;
-      background: transparent;
-      font-size: 10px;
+      max-width: 900px;
+      text-align: center;
     }
 
-    .search button {
-      border: 0;
-      background: transparent;
-      font-size: 17px;
-      cursor: pointer;
+    .hero-image {
+      width: min(100%, 330px);
+      height: 220px;
+      margin: 0 auto 10px;
+      object-fit: contain;
+      animation: float 4s ease-in-out infinite;
     }
 
-    .header-right .btn {
-      white-space: nowrap;
-      font-size: 12px;
-      padding: 10px 20px;
-    }
-
-    .menu-toggle {
-      display: none;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      padding: 7px 10px;
-      background: white;
-      font-size: 21px;
-    }
-
-    /* HERO BANNER */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 84% 34%, #ffdc91 0%, transparent 42%),
-        linear-gradient(110deg, #fffaf3 0%, #fff2df 58%, #ffe8c8 100%);
-      border-radius: 0 0 36px 36px;
-    }
-
-    .hero-inner {
-      min-height: 395px;
-      display: grid;
-      grid-template-columns: 47% 53%;
+    .status {
+      display: inline-flex;
       align-items: center;
-    }
-
-    .hero-copy {
-      z-index: 2;
-      padding: 25px 0 24px 3.5%;
-    }
-
-    .hero-kicker {
-      color: #8d281b;
+      gap: 8px;
+      padding: 8px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #f4dfbb;
+      border-radius: 50px;
+      background: #fff2d9;
+      color: #85501e;
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 3.2px;
-      margin-bottom: 9px;
+      letter-spacing: 1.5px;
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 5vw, 68px);
-      letter-spacing: -2px;
-      line-height: 1.08;
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e7a02d;
+      animation: blink 1.5s infinite;
+    }
+
+    h1 {
       color: var(--brown);
+      font-size: clamp(36px, 6vw, 65px);
+      font-weight: 800;
+      line-height: 1.13;
+      letter-spacing: -1.8px;
     }
 
-    .hero h1 .highlight {
+    h1 span {
       display: block;
       color: var(--red);
-      font-size: 1.03em;
+      font-family: "Pacifico", cursive;
+      font-size: .85em;
+      font-weight: 400;
+      letter-spacing: 0;
+      margin-top: 7px;
     }
 
-    .hero-description {
-      font-size: clamp(14px, 1.5vw, 18px);
-      margin-top: 13px;
-      margin-bottom: 18px;
-    }
-
-    .hero-features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 430px;
-      gap: 8px;
-      margin: 18px 0 19px;
-    }
-
-    .hero-feature {
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.4;
-    }
-
-    .feature-icon {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      margin: 0 auto 6px;
-      border: 2px solid #f4b74c;
-      border-radius: 50%;
-      color: #a43c13;
-      background: #fffdf6;
-      font-size: 19px;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-width: 0;
-      height: 395px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .hero-note {
-      position: absolute;
-      top: 8%;
-      right: 2%;
-      color: #a41f20;
-      font-size: clamp(14px, 1.7vw, 21px);
-      line-height: 1.4;
-      text-align: center;
-      transform: rotate(7deg);
-    }
-
-    /* FLAVOUR SECTION */
-
-    .flavours {
-      padding: 13px 0 24px;
-      background: #fffdf9;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .section-heading h2 {
-      color: var(--brown);
-      font-size: clamp(23px, 2.6vw, 30px);
-      line-height: 1.25;
-    }
-
-    .section-heading p {
+    .description {
+      max-width: 560px;
+      margin: 22px auto 0;
+      padding: 0 5px;
       color: var(--muted);
-      font-size: 12px;
-      margin-top: 3px;
-    }
-
-    .heading-line {
-      display: inline-block;
-      width: 53px;
-      height: 2px;
-      margin: 0 14px 8px;
-      background: linear-gradient(90deg, #ffdf9c, #ffb52b);
-    }
-
-    .flavour-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .flavour-card {
-      min-width: 0;
-      overflow: hidden;
-      border-radius: 15px;
-      transition: transform .25s, box-shadow .25s;
-      box-shadow: 0 3px 9px #542b170b;
-    }
-
-    .flavour-card:nth-child(1) { background: #ffedb9; }
-    .flavour-card:nth-child(2) { background: #e9c7b4; }
-    .flavour-card:nth-child(3) { background: #ffe1bb; }
-    .flavour-card:nth-child(4) { background: #ffe58e; }
-    .flavour-card:nth-child(5) { background: #ffd6dd; }
-
-    .flavour-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px #542b1717;
-    }
-
-    .flavour-image {
-      height: clamp(125px, 18vw, 200px);
-      overflow: hidden;
-    }
-
-    .flavour-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .3s;
-    }
-
-    .flavour-card:hover .flavour-image img {
-      transform: scale(1.04);
-    }
-
-    .flavour-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 5px;
-      padding: 9px 11px 10px;
-    }
-
-    .flavour-info h3 {
-      font-size: clamp(12px, 1.4vw, 16px);
-      line-height: 1.3;
-    }
-
-    .arrow {
-      width: 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      background: #fffaf1;
-      border-radius: 50%;
-      color: var(--red-dark);
       font-size: 15px;
-    }
-
-    .search-message {
-      text-align: center;
-      color: var(--muted);
-      padding-top: 10px;
-      font-size: 12px;
-    }
-
-    /* POPULAR PRODUCTS */
-
-    .products {
-      padding: 1px 0 10px;
-      background: var(--cream);
-    }
-
-    .products .section-heading {
-      margin-bottom: 10px;
-    }
-
-    .product-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 4fr) minmax(185px, 1.12fr);
-      align-items: stretch;
-      gap: 8px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 5px;
-      padding: 18px 9px 12px;
-      background: #fff;
-      border-radius: 24px 24px 0 0;
-    }
-
-    .product-card {
-      min-width: 0;
-      text-align: center;
-      padding: 3px 3px 8px;
-    }
-
-    .product-image {
-      height: clamp(100px, 13vw, 145px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-bottom: 4px;
-      border-radius: 50%;
-      background: #fffdf9;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .product-card h3 {
-      color: #301a12;
-      font-size: clamp(12px, 1.3vw, 15px);
-      line-height: 1.35;
-    }
-
-    .product-card p {
-      color: #6e5b51;
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .b2b-card {
-      align-self: center;
-      min-height: 190px;
-      padding: 19px 17px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: linear-gradient(140deg, #fff5e8, #ffefdb);
-      border: 1px solid white;
-      border-radius: 24px;
-    }
-
-    .b2b-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .b2b-icon {
-      font-size: 32px;
-      color: var(--brown);
-    }
-
-    .b2b-card h3 {
-      color: #31190f;
-      font-size: 19px;
-      line-height: 1.25;
-    }
-
-    .b2b-card p {
-      font-size: 11px;
-      line-height: 1.55;
-      color: #5f4a3d;
-      margin-bottom: 12px;
-    }
-
-    .b2b-card .btn {
-      width: 100%;
-      padding: 10px 7px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    /* ABOUT BANNER */
-
-    .about {
-      background: #fff3e3;
-      overflow: hidden;
-    }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 30% 40% 30%;
-      min-height: 255px;
-      align-items: stretch;
-    }
-
-    .about-photo {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      min-height: 255px;
-      object-fit: cover;
-    }
-
-    .about-copy {
-      align-self: center;
-      padding: 22px 25px;
-      background: #fffaf2;
-      border-radius: 42% 18% 38% 18% / 25% 20% 24% 30%;
-    }
-
-    .about-copy h2 {
-      color: var(--brown);
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1.3;
-      margin-bottom: 13px;
-    }
-
-    .about-copy h2 span {
-      color: var(--red);
-    }
-
-    .about-copy p {
-      font-size: 12px;
-      line-height: 1.65;
-      color: #4f3a30;
-    }
-
-    /* TRUST STRIP */
-
-    .trust-strip {
-      padding: 15px 0;
-      background: #fffaf3;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      align-items: center;
-      gap: 12px;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: clamp(10px, 1vw, 12px);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .trust-item span {
-      font-size: 23px;
-      color: var(--red);
-    }
-
-    .trust-item:first-child span,
-    .trust-item:nth-child(2) span,
-    .trust-item:nth-child(4) span {
-      color: #8d2518;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      background: #fff8ef;
-      padding: 21px 0 10px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr 1.35fr;
-      gap: 24px;
-      padding: 0 10px 19px;
-    }
-
-    .footer-logo {
-      width: 145px;
-      height: 78px;
-      object-fit: contain;
-      object-position: left center;
-      margin-bottom: 2px;
-    }
-
-    .footer-tagline {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--brown);
-    }
-
-    .footer-column h3 {
-      font-size: 13px;
-      color: #482419;
-      margin: 5px 0 9px;
-    }
-
-    .footer-column a {
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      overflow-wrap: anywhere;
-      color: #4c3930;
-      font-size: 12px;
       line-height: 1.8;
     }
 
-    .footer-column a:hover {
-      color: var(--red);
+    .description strong {
+      color: var(--brown);
     }
 
-    .footer-bottom {
-      padding-top: 11px;
-      border-top: 1px solid #eadfd2;
+    .contact-card {
+      width: 100%;
+      max-width: 460px;
+      margin: 28px auto 0;
+      padding: 22px;
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid #f0e0d0;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(91, 48, 25, .06);
+    }
+
+    .contact-card h2 {
+      color: var(--brown);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      margin-bottom: 17px;
+    }
+
+    .whatsapp-button {
+      width: 100%;
+      min-height: 51px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 15px;
-      color: #86776d;
-      font-size: 10px;
-    }
-
-    .footer-legal {
-      display: flex;
       gap: 10px;
-    }
-
-    .footer-legal a:hover {
-      color: var(--red);
-    }
-
-    .whatsapp {
-      position: fixed;
-      z-index: 99;
-      right: 18px;
-      bottom: 18px;
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
+      padding: 13px 18px;
       color: white;
-      background: #25d366;
-      box-shadow: 0 4px 15px #0002;
-      font-size: 24px;
+      background: #20b85a;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .2s ease;
     }
 
-    [hidden] {
-      display: none !important;
+    .whatsapp-button:hover {
+      background: #169447;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px #20b85a30;
     }
 
-    /* TABLETS */
+    .whatsapp-icon {
+      font-size: 23px;
+    }
 
-    @media (max-width: 1000px) {
-      .navbar {
-        gap: 12px;
+    .phone-number {
+      margin-top: 12px;
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .tagline {
+      margin-top: 27px;
+      color: var(--red);
+      font-family: "Pacifico", cursive;
+      font-size: 19px;
+    }
+
+    footer {
+      padding: 20px 15px;
+      border-top: 1px solid #eddfcf;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      color: var(--brown);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+
+    @media (max-width: 500px) {
+      .header {
+        padding: 10px 5%;
       }
 
       .logo img {
-        width: 105px;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .search {
-        width: 145px;
-      }
-
-      .header-right {
-        gap: 8px;
-      }
-
-      .hero-inner {
-        min-height: 345px;
-      }
-
-      .hero-visual {
-        height: 345px;
-      }
-
-      .product-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .b2b-card {
-        min-height: auto;
-      }
-
-      .b2b-title {
-        margin-bottom: 5px;
-      }
-
-      .b2b-card .btn {
-        max-width: 230px;
-      }
-
-      .about-inner {
-        grid-template-columns: 30% 40% 30%;
-      }
-
-      .about-copy {
-        padding: 17px;
-      }
-
-      .footer-grid {
-        gap: 15px;
-      }
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-      .container {
-        width: 93%;
-      }
-
-      .navbar {
-        min-height: 64px;
-      }
-
-      .logo img {
-        width: 98px;
+        width: 115px;
         height: 55px;
       }
 
-      .menu-toggle {
-        display: block;
+      .header-label {
+        font-size: 9px;
+        letter-spacing: .6px;
       }
 
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        padding: 12px 5%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: #fffaf3;
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 8px 20px #542b1710;
+      main {
+        padding: 30px 18px 40px;
       }
 
-      .nav-links.open {
-        display: flex;
+      .hero-image {
+        height: 185px;
+        width: min(100%, 275px);
       }
 
-      .nav-links > a {
-        padding: 10px 0;
+      h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
       }
 
-      .nav-links > a.active {
-        border: 0;
+      .description {
+        font-size: 13px;
       }
 
-      .business-menu summary {
-        padding: 10px 0;
-      }
-
-      .dropdown {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        margin: 4px 0;
-      }
-
-      .search {
-        display: none;
-      }
-
-      .header-right .btn {
-        padding: 9px 12px;
-        font-size: 11px;
-      }
-
-      .header-right {
-        gap: 7px;
-      }
-
-      .hero {
-        border-radius: 0 0 23px 23px;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-        min-height: auto;
-      }
-
-      .hero-copy {
-        padding: 29px 3% 6px;
-      }
-
-      .hero h1 {
-        font-size: clamp(40px, 10vw, 58px);
-        letter-spacing: -1.5px;
-      }
-
-      .hero-description {
-        margin-top: 12px;
-        margin-bottom: 15px;
-      }
-
-      .hero-copy > .btn {
-        margin: auto;
-      }
-
-      .hero-features {
-        margin: 20px auto 8px;
-        gap: 5px;
-      }
-
-      .hero-feature {
-        font-size: 10px;
-      }
-
-      .feature-icon {
-        width: 35px;
-        height: 35px;
-      }
-
-      .hero-visual {
-        height: auto;
-        min-height: 235px;
-      }
-
-      .hero-visual img {
-        max-height: 310px;
-      }
-
-      .hero-note {
-        top: 3%;
-        right: 3%;
-        font-size: 14px;
-      }
-
-      .flavours {
-        padding: 20px 0 25px;
-      }
-
-      .heading-line {
-        width: 25px;
-        margin-left: 6px;
-        margin-right: 6px;
-      }
-
-      .flavour-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .flavour-image {
-        height: clamp(140px, 42vw, 205px);
-      }
-
-      .flavour-info {
-        padding: 9px;
-      }
-
-      .flavour-info h3 {
-        font-size: 14px;
-      }
-
-      .flavour-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
-
-      .products {
-        padding: 8px 0 20px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 12px 8px;
-        gap: 12px;
-        border-radius: 18px;
-      }
-
-      .product-image {
-        height: 155px;
-      }
-
-      .product-card h3 {
-        font-size: 14px;
-      }
-
-      .product-card p {
-        font-size: 11px;
-      }
-
-      .product-card:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
-
-      .b2b-card {
-        padding: 20px;
-        border-radius: 18px;
-      }
-
-      .b2b-card h3 {
-        font-size: 20px;
-      }
-
-      .b2b-card p {
-        font-size: 12px;
-      }
-
-      .b2b-card .btn {
-        max-width: none;
-      }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo img {
-        min-height: 0;
-        height: 270px;
-        object-position: center;
-      }
-
-      .about-copy {
-        margin: 0;
-        padding: 27px 22px;
-        border-radius: 0;
-        text-align: left;
-      }
-
-      .about-copy h2 {
-        font-size: 31px;
-      }
-
-      .about-copy p {
-        font-size: 12px;
-      }
-
-      .trust-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px 8px;
-      }
-
-      .trust-item {
-        justify-content: flex-start;
-        font-size: 10px;
-        white-space: normal;
-      }
-
-      .trust-item span {
-        font-size: 20px;
-      }
-
-      .trust-item:last-child {
-        grid-column: 1 / -1;
-        justify-content: center;
-      }
-
-      .footer {
-        padding-top: 24px;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px 14px;
-        padding: 0 2px 18px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-
-      .footer-logo {
-        width: 140px;
-      }
-
-      .footer-column h3 {
-        font-size: 12px;
-      }
-
-      .footer-column a {
-        font-size: 11px;
-      }
-
-      .footer-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-        line-height: 1.7;
-      }
-
-      .whatsapp {
-        width: 45px;
-        height: 45px;
-        right: 13px;
-        bottom: 13px;
+      .contact-card {
+        padding: 19px 15px;
       }
     }
 
-    @media (max-width: 350px) {
-      .header-right .btn {
-        padding: 8px;
-        font-size: 10px;
-      }
-
-      .logo img {
-        width: 85px;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
-
-      .flavour-info h3 {
-        font-size: 12px;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -1092,466 +285,73 @@
 
 <body>
 
-  <!-- HEADER -->
   <header class="header">
-    <div class="container navbar">
-
-      <a class="logo" href="#home" aria-label="Patil Cold Home">
-        <img src="assets/logo.webp" alt="Patil Cold">
-      </a>
-
-      <nav class="nav-links" id="navLinks">
-        <a class="active" href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-
-        <details class="business-menu">
-          <summary>For Business⌄</summary>
-          <div class="dropdown">
-            <a href="#business">Distributors</a>
-            <a href="#business">Retailers</a>
-            <a href="#business">Bulk Orders</a>
-            <a href="#contact">Business Enquiry</a>
-          </div>
-        </details>
-
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-right">
-        <form class="search" id="searchForm">
-          <input id="flavourSearch" type="search"
-                 placeholder="Search flavours..."
-                 aria-label="Search flavours">
-          <button type="submit" aria-label="Search">⌕</button>
-        </form>
-
-        <a class="btn btn-red" href="#contact">Enquire Now</a>
-
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false">☰</button>
-      </div>
-
-    </div>
+    <a class="logo" href="index.html" aria-label="Patil Cold home">
+      <img src="assets/logo.webp" alt="Patil Cold">
+    </a>
+    <div class="header-label">TASTE THE REAL HAPPINESS</div>
   </header>
 
   <main>
+    <section class="maintenance">
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
+      <img
+        class="hero-image"
+        src="assets/patil-cold-mixed-flavour.webp"
+        alt="Patil Cold ice cream flavours"
+      >
 
-        <div class="hero-copy">
-          <p class="hero-kicker">PREMIUM ICE CREAMS</p>
-
-          <h1>
-            Taste the Real
-            <span class="highlight script">Happiness</span>
-          </h1>
-
-          <p class="hero-description">
-            Delicious Ice Creams for Every Moment
-          </p>
-
-          <div class="hero-features">
-            <div class="hero-feature">
-              <span class="feature-icon">❋</span>
-              Premium<br>Quality
-            </div>
-
-            <div class="hero-feature">
-              <span class="feature-icon">♙</span>
-              Delicious<br>Flavours
-            </div>
-
-            <div class="hero-feature">
-              <span class="feature-icon">♟</span>
-              Loved by<br>Families
-            </div>
-
-            <div class="hero-feature">
-              <span class="feature-icon">₹</span>
-              Affordable<br>for Everyone
-            </div>
-          </div>
-
-          <a class="btn btn-red" href="#products">
-            Explore Products&nbsp; →
-          </a>
-        </div>
-
-        <div class="hero-visual">
-          <img src="assets/patil-cold-mixed-flavour.webp"
-               alt="Patil Cold mixed flavour ice cream">
-          <div class="hero-note script">
-            Happiness<br>in Every<br>Scoop ♡
-          </div>
-        </div>
-
+      <div class="status">
+        <span class="status-dot"></span>
+        TEMPORARILY UNAVAILABLE
       </div>
-    </section>
 
-    <!-- OUR FLAVOURS -->
-    <section class="flavours" id="flavours">
-      <div class="container">
+      <h1>
+        We're Making
+        <span>Something Sweet!</span>
+      </h1>
 
-        <div class="section-heading">
-          <h2><span class="heading-line"></span>Our Flavours<span class="heading-line"></span></h2>
-          <p>A flavour for every mood</p>
-        </div>
+      <p class="description">
+        Our website is currently undergoing maintenance as we work
+        to make your <strong>Patil Cold</strong> experience even better.
+        We'll be back soon with more delicious flavours and exciting updates.
+      </p>
 
-        <div class="flavour-grid" id="flavourGrid">
+      <div class="contact-card">
+        <h2>Craving Ice Cream? Need a Business Enquiry?</h2>
+        <p>
+          For product information, retail orders, distribution
+          opportunities and bulk B2B enquiries, connect with us directly.
+        </p>
 
-          <a href="#products" class="flavour-card" data-flavour="vanilla">
-            <div class="flavour-image">
-              <img src="assets/products/vanilla.webp"
-                   alt="Vanilla ice cream" loading="lazy">
-            </div>
-            <div class="flavour-info">
-              <h3>Vanilla</h3><span class="arrow">→</span>
-            </div>
-          </a>
+        <a
+          class="whatsapp-button"
+          href="https://wa.me/917666582152?text=Hello%20Patil%20Cold%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="whatsapp-icon">◉</span>
+          Contact Us on WhatsApp
+          <span>→</span>
+        </a>
 
-          <a href="#products" class="flavour-card" data-flavour="chocolate">
-            <div class="flavour-image">
-              <img src="assets/products/chocolate.webp"
-                   alt="Chocolate ice cream" loading="lazy">
-            </div>
-            <div class="flavour-info">
-              <h3>Chocolate</h3><span class="arrow">→</span>
-            </div>
-          </a>
-
-          <a href="#products" class="flavour-card" data-flavour="butterscotch">
-            <div class="flavour-image">
-              <img src="assets/products/butterscotch.webp"
-                   alt="Butterscotch ice cream" loading="lazy">
-            </div>
-            <div class="flavour-info">
-              <h3>Butterscotch</h3><span class="arrow">→</span>
-            </div>
-          </a>
-
-          <a href="#products" class="flavour-card" data-flavour="mango">
-            <div class="flavour-image">
-              <img src="assets/products/mango.webp"
-                   alt="Mango ice cream" loading="lazy">
-            </div>
-            <div class="flavour-info">
-              <h3>Mango</h3><span class="arrow">→</span>
-            </div>
-          </a>
-
-          <a href="#products" class="flavour-card" data-flavour="strawberry">
-            <div class="flavour-image">
-              <img src="assets/products/strawberry.webp"
-                   alt="Strawberry ice cream" loading="lazy">
-            </div>
-            <div class="flavour-info">
-              <h3>Strawberry</h3><span class="arrow">→</span>
-            </div>
-          </a>
-
-        </div>
-
-        <p class="search-message" id="searchMessage" hidden></p>
+        <div class="phone-number">+91 76665 82152</div>
       </div>
+
+      <p class="tagline">Happiness in Every Scoop!</p>
+
     </section>
-
-    <!-- POPULAR PRODUCTS AND B2B -->
-    <section class="products" id="products">
-      <div class="container">
-
-        <div class="section-heading">
-          <h2><span class="heading-line"></span>Popular Products<span class="heading-line"></span></h2>
-          <p>Available in different sizes to suit your needs</p>
-        </div>
-
-        <div class="product-layout">
-
-          <div class="product-grid">
-
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/butterscotch.webp"
-                     alt="40 ml small pack" loading="lazy">
-              </div>
-              <h3>40 ml</h3>
-              <p>Small Pack</p>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/chocolate.webp"
-                     alt="80 ml cup pack" loading="lazy">
-              </div>
-              <h3>80 ml</h3>
-              <p>Cup Pack</p>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/products/vanilla.webp"
-                     alt="120 ml regular pack" loading="lazy">
-              </div>
-              <h3>120 ml</h3>
-              <p>Regular Pack</p>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/patil-cold-mixed-flavour.webp"
-                     alt="500 ml family pack" loading="lazy">
-              </div>
-              <h3>500 ml</h3>
-              <p>Family Pack</p>
-            </article>
-
-            <article class="product-card">
-              <div class="product-image">
-                <img src="assets/patil-cold-mixed-flavour.webp"
-                     alt="1 litre value pack" loading="lazy">
-              </div>
-              <h3>1 L</h3>
-              <p>Value Pack</p>
-            </article>
-
-          </div>
-
-          <aside class="b2b-card" id="business">
-            <div class="b2b-title">
-              <span class="b2b-icon">📦</span>
-              <h3>Bulk &amp;<br>B2B Supply</h3>
-            </div>
-
-            <p>For retailers, distributors and businesses</p>
-
-            <a class="btn btn-red" href="#contact"
-               data-enquiry="B2B Supply">
-              Contact for B2B&nbsp; →
-            </a>
-          </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT BANNER -->
-    <section class="about" id="about">
-      <div class="about-inner">
-
-        <div class="about-photo">
-          <img src="assets/about-icecream.webp"
-               alt="Enjoying ice cream" loading="lazy">
-        </div>
-
-        <div class="about-copy">
-          <h2 class="script">
-            Happiness<br>in <span>Every Scoop</span>
-          </h2>
-
-          <p>
-            At Patil Cold, we believe ice cream is more than a dessert —
-            it's a moment of joy.
-          </p>
-
-          <p>
-            Made with a focus on delightful flavours, our ice creams aim
-            to bring smiles to families across Maharashtra and beyond.
-          </p>
-        </div>
-
-        <div class="about-photo">
-          <img src="assets/patil-cold-mixed-flavour.webp"
-               alt="Patil Cold mixed ice cream flavours" loading="lazy">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TRUST STRIP -->
-    <section class="trust-strip">
-      <div class="container trust-grid">
-
-        <div class="trust-item"><span>❧</span>Quality Ingredients</div>
-        <div class="trust-item"><span>⬟</span>Hygienic Processing</div>
-        <div class="trust-item"><span>🚚</span>Wide Distribution</div>
-        <div class="trust-item"><span>★</span>Great Taste</div>
-        <div class="trust-item"><span>♟</span>Trusted by Families</div>
-
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <a href="#home">
-            <img class="footer-logo"
-                 src="assets/logo.webp"
-                 alt="Patil Cold logo" loading="lazy">
-          </a>
-          <p class="footer-tagline">Taste the Real Happiness</p>
-        </div>
-
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
-          <a href="#business">For Business</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Our Products</h3>
-          <a href="#flavours">Vanilla</a>
-          <a href="#flavours">Chocolate</a>
-          <a href="#flavours">Butterscotch</a>
-          <a href="#flavours">Mango</a>
-          <a href="#flavours">Strawberry</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>For Business</h3>
-          <a href="#business">Distributors</a>
-          <a href="#business">Retailers</a>
-          <a href="#business">Bulk Orders</a>
-          <a href="#contact">Enquiry</a>
-        </div>
-
-        <div class="footer-column">
-          <h3>Contact Us</h3>
-          <a href="mailto:contactpatilcold@gmail.com">
-            ✉ &nbsp;contactpatilcold@gmail.com
-          </a>
-          <a href="https://wa.me/917249310060"
-             target="_blank" rel="noopener noreferrer">
-            🟢 &nbsp;+91 7249310060
-          </a>
-          <a href="https://www.instagram.com/patilcold/"
-             target="_blank" rel="noopener noreferrer">
-            📷 &nbsp;patilcold
-          </a>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="currentYear"></span> Patil Cold. All Rights Reserved.</p>
-        <div class="footer-legal">
-          <a href="mailto:contactpatilcold@gmail.com?subject=Privacy%20Policy">Privacy Policy</a>
-          <span>|</span>
-          <a href="mailto:contactpatilcold@gmail.com?subject=Terms%20and%20Conditions">Terms &amp; Conditions</a>
-        </div>
-      </div>
-
-    </div>
+  <footer>
+    <strong>Patil Cold</strong> &nbsp;|&nbsp; Taste the Real Happiness
+    <br>
+    © <span id="year"></span> Patil Cold. All Rights Reserved.
   </footer>
 
-  <!-- WHATSAPP -->
-  <a class="whatsapp"
-     href="https://wa.me/917249310060?text=Hello%20Patil%20Cold%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Contact Patil Cold on WhatsApp">◉</a>
-
   <script>
-    // Footer year
-    document.getElementById("currentYear").textContent =
+    document.getElementById("year").textContent =
       new Date().getFullYear();
-
-    // Mobile navigation
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.textContent = isOpen ? "✕" : "☰";
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuToggle.textContent = "☰";
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function (event) {
-      document.querySelectorAll(".business-menu[open]").forEach(function (item) {
-        if (!item.contains(event.target)) {
-          item.removeAttribute("open");
-        }
-      });
-    });
-
-    // Search the five existing flavours
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = document.getElementById("flavourSearch");
-    const cards = Array.from(document.querySelectorAll(".flavour-card"));
-    const searchMessage = document.getElementById("searchMessage");
-
-    function filterFlavours() {
-      const query = searchInput.value.trim().toLowerCase();
-      let matches = 0;
-
-      cards.forEach(function (card) {
-        const found = card.dataset.flavour.includes(query);
-        card.hidden = !found;
-        if (found) matches++;
-      });
-
-      searchMessage.hidden = !query || matches > 0;
-
-      if (query && matches === 0) {
-        searchMessage.textContent = "No matching flavour found.";
-      }
-
-      if (query) {
-        document.getElementById("flavours").scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    }
-
-    searchForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      filterFlavours();
-    });
-
-    searchInput.addEventListener("input", function () {
-      if (!searchInput.value.trim()) {
-        cards.forEach(function (card) {
-          card.hidden = false;
-        });
-        searchMessage.hidden = true;
-      }
-    });
-
-    // Prepare a relevant WhatsApp enquiry
-    const whatsappLink = document.querySelector(".whatsapp");
-
-    document.querySelectorAll("[data-enquiry]").forEach(function (link) {
-      link.addEventListener("click", function () {
-        const category = link.dataset.enquiry;
-        const message =
-          "Hello Patil Cold, I am interested in " + category +
-          ". Please share more information.";
-
-        whatsappLink.href =
-          "https://wa.me/917249310060?text=" +
-          encodeURIComponent(message);
-      });
-    });
   </script>
 
 </body>
